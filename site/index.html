@@ -117,21 +117,40 @@ html += `
 <div class="paper">
 
 <h3>
+
+<a href="${pub.url || '#'}" target="_blank">
+
 ${pub.title}
+
+</a>
+
 </h3>
 
 <p>
-${pub.journal || ""} 
+${pub.journal || ""}
 ${pub.year ? " · " + pub.year : ""}
 </p>
 
 <div class="buttons">
 
-<button>Paper</button>
+<div class="buttons">
 
-<button>DOI</button>
+<a href="${pub.url || '#'}" target="_blank">
+Paper
+</a>
 
-<button>BibTeX</button>
+
+<a href="https://doi.org/${pub.doi}" target="_blank">
+DOI
+</a>
+
+
+<a href="#" target="_blank">
+BibTeX
+</a>
+
+
+</div>
 
 </div>
 
