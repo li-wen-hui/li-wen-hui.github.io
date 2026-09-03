@@ -389,13 +389,6 @@ cursor:not-allowed;
 
 #publication-list{
 
-    width:100%;
-
-}
-
-
-#publication-list .paper{
-
     width:calc(100% - 370px);
 
     margin-left:370px;
