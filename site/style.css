@@ -377,19 +377,13 @@ cursor:not-allowed;
 
 #publications{
 
-    width:1250px;
+    max-width:1250px;
 
     margin:80px auto 0;
 
-}
-
-
-#publications h2{
-
-    margin-left:0;
+    padding:0 40px;
 
 }
-
 
 
 #publication-list{
