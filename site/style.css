@@ -382,25 +382,14 @@ cursor:not-allowed;
 }
 
 #publications{
-    width:100%;
+margin-left:-370px;
 }
-
 
 #publication-list{
-    width:100%;
-    display:block;
+margin-left:370px;
 }
 
-
-#publication-list .paper{
-
-    display:block;
-
-    width:100% !important;
-
-    max-width:none;
-
-}
+width:calc(...)
 footer{
 
 
