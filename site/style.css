@@ -374,29 +374,13 @@ cursor:not-allowed;
 
 }
 
-/* Publications */
-
 #publications{
-
-    max-width:1250px;
-
-    margin:80px auto 0;
-
-    padding:0 40px;
-
-    margin-left:-370px;
-
-    width:calc(100% + 370px);
-
+    margin-top:80px;
 }
 
 
 #publication-list{
-
-    width:calc(100% - 370px);
-
-    margin-left:370px;
-
+    width:80%;
 }
 footer{
 
