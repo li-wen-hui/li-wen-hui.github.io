@@ -380,19 +380,6 @@ cursor:not-allowed;
 
 
 }
-#publications{
-    width:100%;
-}
-
-
-#publication-list{
-    width:100%;
-}
-
-
-#publication-list .paper{
-    width:100%;
-}
 /* Fix publication width */
 
 #publications{
