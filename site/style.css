@@ -348,3 +348,20 @@ grid-template-columns:1fr;
 }
 
 }
+#publications{
+
+max-width:1250px;
+
+margin:80px auto;
+
+padding:0 40px;
+
+}
+
+
+
+#publications .paper{
+
+width:100%;
+
+}
