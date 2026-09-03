@@ -8,7 +8,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
 <title>
 Wenhui Li | Academic Homepage
 </title>
@@ -29,31 +28,23 @@ Wenhui Li | Academic Homepage
 
 
 <div class="brand">
-
 Wenhui Li
-
 </div>
 
 
-
-
 <div class="menu">
-
 
 <a href="#">
 Home
 </a>
 
-
 <a href="#">
 Research
 </a>
 
-
 <a href="#publications">
 Publications
 </a>
-
 
 <a href="#">
 CV
@@ -63,10 +54,7 @@ CV
 </div>
 
 
-
 </nav>
-
-
 
 
 
@@ -76,22 +64,15 @@ CV
 
 
 
-
-
-
 <aside>
-
 
 
 
 <div class="avatar">
 
-
 <img src="assets/avatar.jpg">
 
-
 </div>
-
 
 
 
@@ -99,7 +80,6 @@ CV
 <h1>
 Wenhui Li
 </h1>
-
 
 
 
@@ -113,16 +93,13 @@ Wenhui Li
 
 <div class="role">
 
-
 Master's Student<br>
 
 Control Science and Engineering<br>
 
 Henan University
 
-
 </div>
-
 
 
 
@@ -134,38 +111,25 @@ Henan University
 
 <a href="https://orcid.org/0009-0008-4156-6373"
 target="_blank">
-
 ORCID
-
 </a>
-
-
 
 
 <a href="https://github.com/li-wen-hui"
 target="_blank">
-
 GitHub
-
 </a>
-
-
 
 
 
 <a href="https://scholar.google.com/citations?user=M1kKaQ0AAAAJ"
 target="_blank">
-
 Google Scholar
-
 </a>
 
 
 
-
 </div>
-
-
 
 
 
@@ -177,10 +141,7 @@ Google Scholar
 
 
 
-
-
 <main>
-
 
 
 
@@ -214,15 +175,12 @@ and robust reversible watermarking.
 
 
 
-
-
 <section>
 
 
 <h2>
 Research Interests
 </h2>
-
 
 
 
@@ -257,7 +215,6 @@ Robust Reversible Watermarking
 
 
 
-
 <div class="focus">
 
 
@@ -280,17 +237,26 @@ with robustness, invariance, and reversibility.
 
 
 
-
-
 </section>
 
 
 
 
+</main>
 
 
 
 
+</div>
+
+
+
+
+
+
+
+
+<!-- Publications -->
 
 <section id="publications">
 
@@ -298,8 +264,6 @@ with robustness, invariance, and reversibility.
 <h2>
 Selected Publications
 </h2>
-
-
 
 
 
@@ -311,25 +275,7 @@ Loading publications...
 
 
 
-
-
 </section>
-
-
-
-
-
-
-
-</main>
-
-
-
-
-
-</div>
-
-
 
 
 
@@ -339,9 +285,7 @@ Loading publications...
 
 <footer>
 
-
 Academic Homepage · Wenhui Li
-
 
 </footer>
 
@@ -359,44 +303,29 @@ Academic Homepage · Wenhui Li
 fetch("data/publications.json")
 
 
-
-.then(response => response.json())
-
+.then(response=>response.json())
 
 
-.then(publications => {
+.then(publications=>{
 
 
-
-let html = "";
+let html="";
 
 
 
-
-
-publications.forEach(pub => {
+publications.forEach(pub=>{
 
 
 
 html += `
 
 
-
-
 <div class="paper">
 
 
-
-
-
 <h3>
-
 ${pub.title}
-
 </h3>
-
-
-
 
 
 
@@ -405,10 +334,6 @@ ${pub.title}
 ${pub.authors ? pub.authors.join(", ") : ""}
 
 </p>
-
-
-
-
 
 
 
@@ -425,15 +350,7 @@ ${pub.year || ""}
 
 
 
-
-
-
-
-
 <div class="buttons">
-
-
-
 
 
 ${
@@ -444,9 +361,7 @@ pub.url
 `
 
 <a href="${pub.url}" target="_blank">
-
 Paper
-
 </a>
 
 `
@@ -456,19 +371,12 @@ Paper
 `
 
 <span class="disabled">
-
 Paper
-
 </span>
 
 `
 
 }
-
-
-
-
-
 
 
 
@@ -480,9 +388,7 @@ pub.code
 `
 
 <a href="${pub.code}" target="_blank">
-
 Code
-
 </a>
 
 `
@@ -492,9 +398,7 @@ Code
 `
 
 <span class="disabled">
-
 Code
-
 </span>
 
 `
@@ -503,23 +407,11 @@ Code
 
 
 
-
-
-
-
 </div>
 
 
 
-
-
-
-
 </div>
-
-
-
-
 
 
 `;
@@ -531,42 +423,29 @@ Code
 
 
 
-
-
 document.getElementById(
 "publication-list"
-).innerHTML = html;
-
-
+).innerHTML=html;
 
 
 
 })
 
 
-
-
-
-.catch(error => {
-
+.catch(error=>{
 
 
 document.getElementById(
 "publication-list"
-).innerHTML =
+).innerHTML=
 "Unable to load publications";
-
 
 
 });
 
 
 
-
-
 </script>
-
-
 
 
 
