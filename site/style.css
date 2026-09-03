@@ -375,15 +375,20 @@ cursor:not-allowed;
 }
 
 
+/* Publications */
+
 #publications{
 
     max-width:1250px;
 
     margin:80px auto 0;
 
-    padding:0 40px;
+    padding-left:40px;
+
+    padding-right:40px;
 
 }
+
 
 
 #publication-list{
@@ -393,13 +398,15 @@ cursor:not-allowed;
 }
 
 
+/* 向左扩展到头像左侧 */
 
 #publication-list .paper{
 
-    width:100%;
+    width:calc(100% + 370px);
+
+    margin-left:-370px;
 
 }
-
 
 footer{
 
