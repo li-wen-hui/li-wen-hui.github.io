@@ -126,69 +126,70 @@ color:white;
 }
 
 .buttons{
-display:flex;
-gap:14px;
-margin-top:18px;
-align-items:center;
+    display:flex;
+    gap:18px;
+    margin-top:20px;
+    align-items:center;
 }
 
 
-.buttons a{
-display:inline-flex;
-align-items:center;
-justify-content:center;
+.buttons a,
+.buttons .disabled{
 
-padding:7px 16px;
+    display:inline-flex;
 
-min-width:60px;
+    justify-content:center;
+    align-items:center;
 
-border-radius:7px;
+    width:72px;
+    height:34px;
 
-border:1px solid #4d789b;
+    border-radius:8px;
 
-background:#19344c;
+    border:1px solid #4d789b;
 
-color:#d9e9ff;
+    background:#14283b;
 
-font-size:14px;
+    color:#d9e9ff;
 
-text-decoration:none;
+    font-size:14px;
 
-transition:0.25s;
+    text-decoration:none;
+
+    transition:all 0.25s ease;
+
 }
 
+
+/* Paper 可点击 */
 
 .buttons a:hover{
-background:#244b6b;
-border-color:#83c5ff;
+
+    transform:scale(1.08);
+
+    background:#1e4260;
+
+    border-color:#83c5ff;
+
+    box-shadow:0 0 12px rgba(131,197,255,0.35);
+
 }
 
+
+
+/* Code 禁用 */
 
 .buttons .disabled{
 
-display:inline-flex;
+    color:#718096;
 
-align-items:center;
+    background:#101923;
 
-justify-content:center;
+    border-color:#34495e;
 
-padding:7px 16px;
+    opacity:0.65;
 
-min-width:60px;
-
-border-radius:7px;
-
-border:1px solid #31506d;
-
-background:#101d2c;
-
-color:#718096;
-
-font-size:14px;
-
-opacity:0.6;
-
-cursor:not-allowed;
+    cursor:not-allowed;
 
 }
 
