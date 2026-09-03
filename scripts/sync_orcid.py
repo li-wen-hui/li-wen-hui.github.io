@@ -42,12 +42,31 @@ for item in data["group"]:
         )
 
 
-    papers.append(
-        {
-            "title": title,
-            "year": year
-        }
-    )
+    doi = ""
+
+journal = ""
+
+
+if summary.get("external-ids"):
+
+    for eid in summary["external-ids"].get("external-id", []):
+
+        if eid.get("external-id-type") == "doi":
+            doi = eid.get("external-id-value")
+
+
+if summary.get("journal-title"):
+    journal = summary["journal-title"]["value"]
+
+
+papers.append(
+{
+    "title": title,
+    "year": year,
+    "journal": journal,
+    "doi": doi
+}
+)
 
 
 with open(
