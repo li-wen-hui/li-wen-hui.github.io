@@ -3,23 +3,59 @@ name: Deploy Academic Homepage
 on:
   push:
     branches: [main]
+
   workflow_dispatch:
 
+  schedule:
+    - cron: "0 2 * * 1"
+
+
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
 
+jobs:
+
+  deploy:
+
+    runs-on: ubuntu-latest
+
+
+    steps:
+
+      # 下载仓库
+      - name: Checkout
+        uses: actions/checkout@v4
+
+
+      # 配置 Python
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+
+      # 安装 ORCID 同步需要的库
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+
+      # 从 ORCID 获取论文
+      - name: Sync ORCID publications
+        run: |
+          python scripts/sync_orcid.py
+
+
+      # 上传网页
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./site
 
+
+      # 部署
       - name: Deploy
         uses: actions/deploy-pages@v4
