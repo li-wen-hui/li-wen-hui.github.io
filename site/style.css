@@ -375,12 +375,23 @@ cursor:not-allowed;
 }
 
 #publications{
+
     margin-top:80px;
+
 }
 
 
 #publication-list{
-    width:80%;
+
+    width:100%;
+
+}
+
+
+#publication-list .paper{
+
+    width:100%;
+
 }
 footer{
 
