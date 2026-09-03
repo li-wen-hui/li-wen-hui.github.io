@@ -287,17 +287,16 @@ Academic Homepage · Wenhui Li
 <script>
 
 
-fetch("data/publications.json")
+Promise.all([
+fetch("data/publications.json").then(response=>response.json()),
+fetch("data/paper_images.json").then(response=>response.json())
+])
 
 
-.then(response=>response.json())
-
-
-.then(publications=>{
+.then(([publications, images])=>{
 
 
 let html="";
-
 
 
 publications.forEach(pub=>{
@@ -308,6 +307,16 @@ html += `
 
 
 <div class="paper">
+
+
+<div class="paper-image">
+
+<img src="${images[pub.title] || 'assets/default-paper.png'}">
+
+</div>
+
+
+<div class="paper-content">
 
 
 <h3>
@@ -399,7 +408,7 @@ Code
 
 
 </div>
-
+</div>
 
 `;
 
