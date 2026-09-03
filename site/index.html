@@ -117,20 +117,20 @@ html += `
 <div class="paper">
 
 <h3>
-
-<a href="${pub.url || '#'}" target="_blank">
-
+<a href="${pub.url}" target="_blank">
 ${pub.title}
-
 </a>
-
 </h3>
 
+
 <p>
-${pub.journal || ""}
-${pub.year ? " · " + pub.year : ""}
+${pub.authors.join(", ")}
 </p>
 
+
+<p>
+${pub.journal} · ${pub.year}
+</p>
 <div class="buttons">
 
 <div class="buttons">
