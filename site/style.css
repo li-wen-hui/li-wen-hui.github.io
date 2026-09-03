@@ -93,6 +93,13 @@ padding:0 40px;
 
 
 
+main{
+
+width:100%;
+
+}
+
+
 
 .avatar{
 
@@ -376,21 +383,23 @@ cursor:not-allowed;
 
 #publications{
 
-    margin-top:80px;
+margin-top:80px;
 
 }
+
 
 
 #publication-list{
 
-    width:100%;
+width:100%;
 
 }
 
 
+
 #publication-list .paper{
 
-    width:100%;
+width:100%;
 
 }
 footer{
