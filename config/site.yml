@@ -47,7 +47,7 @@ sync:
     provider: "serpapi"
 
   github:
-    enabled: true
+    enabled: truerue
 
 
 
