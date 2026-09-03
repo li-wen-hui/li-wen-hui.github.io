@@ -1,48 +1,59 @@
 site:
   url: "https://li-wen-hui.github.io/"
-  custom_domain: ""
   title: "Wenhui Li | Academic Homepage"
-  description: "Academic homepage of Wenhui Li - image representation, multimedia security, orthogonal moments, and robust reversible watermarking."
+  description: "Academic homepage of Wenhui Li, focusing on image representation and multimedia security."
   language: "en"
   timezone: "Asia/Shanghai"
+
 
 profile:
   name: "Wenhui Li"
   name_zh: "李文辉"
   initials: "WL"
+
   headline: "M.S. Student | Image Representation and Multimedia Security"
+
   affiliation: "Henan University"
   department: "Control Science and Engineering"
   advisor: "Prof. Xiuli Chai"
+
   location: "Zhengzhou, China"
+
   email: "liwenhui@henu.edu.cn"
+
   github_username: "li-wen-hui"
+
   orcid_id: "0009-0008-4156-6373"
-  scholar_author_id: ""
-  scholar_url: ""
   orcid_url: "https://orcid.org/0009-0008-4156-6373"
-  linkedin_url: ""
-  researchgate_url: ""
+
+  scholar_author_id: "M1kKaQ0AAAAJ"
+  scholar_url: "https://scholar.google.com/citations?user=M1kKaQ0AAAAJ"
+
+
+# 自动同步
+# 注意：只同步统计，不修改论文列表
 
 sync:
+
   orcid:
     enabled: true
+
   crossref:
     enabled: true
     polite_email: "liwenhui@henu.edu.cn"
+
   scholar:
     enabled: true
     provider: "serpapi"
+
   github:
     enabled: true
 
+
+
 analytics:
   provider: "none"
-  plausible_domain: ""
-  plausible_script: "https://plausible.io/js/script.js"
-  umami_website_id: ""
-  umami_script: "https://cloud.umami.is/script.js"
-  ga4_measurement_id: ""
+
 
 auto_cv:
   enabled: true
