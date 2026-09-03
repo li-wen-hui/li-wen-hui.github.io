@@ -463,7 +463,17 @@ flex:1;
 
 }
 
+.paper-image{
+    width:200px !important;
+    height:200px !important;
+    background:red !important;
+}
 
+
+.paper-image img{
+    width:100% !important;
+    height:100% !important;
+}
 
 @media(max-width:850px){
 
