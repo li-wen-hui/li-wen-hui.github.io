@@ -394,6 +394,14 @@ padding:0 40px;
 }
 
 
+#publications h2{
+
+margin-left:0;
+
+}
+
+
+
 #publication-list{
 
 width:calc(100% - 370px);
@@ -401,12 +409,11 @@ width:calc(100% - 370px);
 }
 
 
-#publications h2{
+.paper{
 
-margin-bottom:30px;
+width:100%;
 
 }
-
 
 
 
