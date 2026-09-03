@@ -29,8 +29,28 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button,inp
 .theme-button{width:34px;height:34px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--muted);cursor:pointer}
 main{max-width:var(--max);margin:auto;padding:60px 22px 90px}
 .home-section{display:grid;grid-template-columns:265px 1fr;gap:54px;padding:14px 0 74px;border-bottom:1px solid var(--line)}
-.portrait-shell{width:178px;aspect-ratio:4/5;padding:6px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:5px}
-.portrait-shell img{width:100%;height:100%;object-fit:cover;border-radius:2px}
+.portrait-shell{
+  width:190px;
+  aspect-ratio:4/5;
+  padding:0;
+  overflow:hidden;
+  background:#ffffff;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center
+}
+
+.portrait-shell img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center 18%;
+  border-radius:8px
+}
 .identity-block{margin-top:22px}.identity-block h1{margin:0;font-family:"Source Serif 4",Georgia,serif;font-size:2rem;line-height:1.1;letter-spacing:-.025em;color:var(--navy-dark)}
 .name-zh{font-family:"Source Serif 4",Georgia,serif;color:var(--muted);font-size:1.12rem;margin-top:4px}
 .role{font-weight:600;font-size:.9rem;margin:15px 0 2px}.affiliation{font-size:.86rem;color:var(--muted);margin:0}
