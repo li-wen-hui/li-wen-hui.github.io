@@ -1,158 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Wenhui Li | Academic Homepage</title>
+
+<title>
+Wenhui Li | Academic Homepage
+</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
+
 <nav>
-<div class="brand">Wenhui Li</div>
-<div class="menu">
-<a>Home</a>
-<a>Research</a>
-<a>Publications</a>
-<a>CV</a>
+
+<div class="brand">
+Wenhui Li
 </div>
+
+
+<div class="menu">
+
+<a href="#">
+Home
+</a>
+
+<a href="#">
+Research
+</a>
+
+<a href="#publications">
+Publications
+</a>
+
+<a href="#">
+CV
+</a>
+
+</div>
+
 </nav>
+
+
 
 <div class="container">
 
+
+
 <aside>
+
+
 <div class="avatar">
+
 <img src="assets/avatar.jpg">
+
 </div>
 
-<h1>Wenhui Li</h1>
-<p class="zh">李文辉</p>
+
+<h1>
+Wenhui Li
+</h1>
+
+
+<p class="zh">
+李文辉
+</p>
+
+
 
 <div class="role">
+
 Master's Student<br>
+
 Control Science and Engineering<br>
+
 Henan University
+
 </div>
 
+
+
 <div class="profile-links">
-<a href="https://orcid.org/0009-0008-4156-6373">ORCID</a>
-<a href="https://github.com/li-wen-hui">GitHub</a>
+
+
+<a href="https://orcid.org/0009-0008-4156-6373"
+target="_blank">
+
+ORCID
+
+</a>
+
+
+
+<a href="https://github.com/li-wen-hui"
+target="_blank">
+
+GitHub
+
+</a>
+
+
+
 <a href="https://scholar.google.com/citations?user=M1kKaQ0AAAAJ"
 target="_blank">
+
 Google Scholar
+
 </a>
+
+
 </div>
+
+
 </aside>
+
+
 
 
 <main>
 
+
+
 <section>
-<h2>Research Profile</h2>
+
+
+<h2>
+Research Profile
+</h2>
+
 
 <p>
+
 I am a Master's student in Control Science and Engineering at Henan University,
 advised by Prof. Xiuli Chai. My research focuses on image representation,
 multimedia security, orthogonal moments, transform-domain representation,
 and robust reversible watermarking.
+
 </p>
 
+
 </section>
 
 
+
+
+
 <section>
-<h2>Research Interests</h2>
+
+
+<h2>
+Research Interests
+</h2>
+
+
 
 <div class="tags">
-<span>Image Representation</span>
-<span>Multimedia Security</span>
-<span>Orthogonal Moments</span>
-<span>Robust Reversible Watermarking</span>
+
+<span>
+Image Representation
+</span>
+
+
+<span>
+Multimedia Security
+</span>
+
+
+<span>
+Orthogonal Moments
+</span>
+
+
+<span>
+Robust Reversible Watermarking
+</span>
+
+
 </div>
+
+
+
 
 <div class="focus">
-<h3>Research Focus</h3>
+
+<h3>
+Research Focus
+</h3>
+
+
 Principled mathematical representations and secure multimedia processing
 with robustness, invariance, and reversibility.
+
+
 </div>
+
+
 </section>
 
-<section>
 
-<h2>Selected Publications</h2>
 
-<div id="publications">
+
+
+
+<section id="publications">
+
+
+<h2>
+Selected Publications
+</h2>
+
+
+
+<div id="publication-list">
+
 Loading publications...
+
 </div>
 
+
+
 </section>
+
+
 
 </main>
 
+
 </div>
 
+
+
+
+
 <footer>
+
 Academic Homepage · Wenhui Li
-<footer>
+
+</footer>
+
+
+
+
+
 
 
 <script>
 
+
 fetch("data/publications.json")
+
 
 .then(response => response.json())
 
+
 .then(publications => {
+
 
 
 let html = "";
 
 
+
 publications.forEach(pub => {
+
+
+
+let paperLink = pub.url 
+? 
+`
+<a href="${pub.url}" target="_blank">
+Paper
+</a>
+`
+:
+"";
+
+
+
+let doiLink = pub.doi_url
+?
+`
+<a href="${pub.doi_url}" target="_blank">
+DOI
+</a>
+`
+:
+"";
+
+
+
+let bibLink =
+pub.bibtex
+?
+`
+<a href="${pub.bibtex}" target="_blank">
+BibTeX
+</a>
+`
+:
+"";
+
+
 
 
 html += `
 
+
+
 <div class="paper">
 
+
 <h3>
-<a href="${pub.url}" target="_blank">
+
+
+<a href="${pub.url || '#'}"
+target="_blank">
+
+
 ${pub.title}
+
+
 </a>
+
+
 </h3>
 
 
+
 <p>
-${pub.authors.join(", ")}
+
+${pub.authors ? pub.authors.join(", ") : ""}
+
 </p>
 
 
+
+
 <p>
-${pub.journal} · ${pub.year}
+
+${pub.journal || ""}
+
+ · 
+
+${pub.year || ""}
+
+
 </p>
+
+
+
+
 <div class="buttons">
 
-<div class="buttons">
 
-<a href="${pub.url || '#'}" target="_blank">
-Paper
-</a>
+${paperLink}
 
 
-<a href="https://doi.org/${pub.doi}" target="_blank">
-DOI
-</a>
+${doiLink}
 
 
-<a href="#" target="_blank">
-BibTeX
-</a>
+${bibLink}
+
 
 
 </div>
 
-</div>
+
 
 </div>
 
@@ -160,30 +380,41 @@ BibTeX
 `;
 
 
+
 });
 
 
+
 document.getElementById(
-"publications"
-).innerHTML = html;
+"publication-list"
+)
+.innerHTML = html;
+
 
 
 })
 
+
 .catch(error => {
 
 
+
 document.getElementById(
-"publications"
-).innerHTML =
+"publication-list"
+)
+.innerHTML =
 "Unable to load publications";
 
 
 });
 
 
+
 </script>
 
 
+
 </body>
+
+
 </html>
