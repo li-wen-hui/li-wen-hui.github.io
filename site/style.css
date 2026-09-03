@@ -377,28 +377,34 @@ cursor:not-allowed;
 
 #publications{
 
-max-width:1250px;
+    width:1250px;
 
-margin:80px auto 0;
-
-padding:0 40px;
+    margin:80px auto 0;
 
 }
+
+
+#publications h2{
+
+    margin-left:0;
+
+}
+
 
 
 #publication-list{
 
-width:100%;
+    width:100%;
 
 }
+
 
 
 #publication-list .paper{
 
-width:100%;
+    width:100%;
 
 }
-
 
 
 footer{
