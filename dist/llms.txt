@@ -1,0 +1,6 @@
+# Wenhui Li
+
+Academic homepage: https://li-wen-hui.github.io/
+Research interests: Image Representation, Multimedia Security, Orthogonal Moments, Robust Reversible Watermarking
+Publications metadata: https://li-wen-hui.github.io/academic-profile.json
+BibTeX: https://li-wen-hui.github.io/publications.bib

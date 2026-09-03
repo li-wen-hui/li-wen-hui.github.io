@@ -109,7 +109,8 @@
       "scholar_url": "",
       "doi_url": "",
       "bibtex": "@article{prmaxentropy,\n  title = {Maximum-Entropy Polar Harmonic Transforms for Information-Density-Driven Image Representation},\n  journal = {Pattern Recognition},\n  year = {2026}\n}",
-      "number": "01"
+      "number": "01",
+      "cover": "assets/img/covers/01-maximum-entropy-polar-harmonic-transforms-for-informatio.svg"
     },
     {
       "source": "manual",
@@ -137,7 +138,8 @@
       "scholar_url": "",
       "doi_url": "",
       "bibtex": "@article{spzeros,\n  title = {Robust Reversible Image Watermarking Based on the Zeros Distribution of Orthogonal Moments},\n  journal = {Signal Processing},\n  year = {2026}\n}",
-      "number": "02"
+      "number": "02",
+      "cover": "assets/img/covers/02-robust-reversible-image-watermarking-based-on-the-zeros-.svg"
     }
   ],
   "metrics": {

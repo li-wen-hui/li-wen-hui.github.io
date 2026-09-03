@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460">
+<rect width="720" height="460" fill="#e8f0f6"/>
+<rect x="1" y="1" width="718" height="458" fill="none" stroke="#cfd9e2" stroke-width="2"/>
+<g opacity=".28" stroke="#7396af" fill="none">
+  <circle cx="555" cy="215" r="116"/><circle cx="555" cy="215" r="78"/><circle cx="555" cy="215" r="42"/>
+  <path d="M435 215h240M555 95v240"/><path d="M467 138c62 39 116 102 162 156"/>
+</g>
+<g fill="#315c7d"><rect x="46" y="42" width="70" height="28" rx="3" opacity=".95"/></g>
+<g font-family="Arial,Helvetica,sans-serif">
+  <text x="81" y="62" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">PR</text>
+  <text x="46" y="133" font-size="30" font-weight="700" fill="#315c7d"><tspan x="46" dy="39">Maximum-Entropy Polar Harmonic</tspan><tspan x="46" dy="39">Transforms for</tspan><tspan x="46" dy="39">Information-Density-Driven</tspan></text>
+  <text x="46" y="393" font-size="17" fill="#68788a">WENHUI LI - SELECTED PUBLICATION</text>
+  <text x="633" y="392" font-size="62" font-weight="700" fill="#315c7d" opacity=".12">01</text>
+</g>
+</svg>
