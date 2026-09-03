@@ -1,23 +1,5 @@
 # Manual publication seeds are merged with ORCID/Crossref/Scholar/GitHub data.
 publications:
-  - id: "tip-attack-aware"
-    order: 1
-    category: "Multimedia Security"
-    title: "Attack-Aware Metric Learning With Polar Harmonic Fourier Moments for Robust Reversible Color Image Watermarking"
-    authors_html: "<strong>Wenhui Li</strong>, Xiuli Chai, et al."
-    venue: "IEEE Transactions on Image Processing"
-    venue_short: "TIP"
-    year: 2026
-    status: "Under Review"
-    status_class: "review"
-    doi: ""
-    paper_url: ""
-    code_url: ""
-    project_url: ""
-    github_repo: ""
-    tags: ["Watermarking", "Metric Learning", "Color Image"]
-    featured: true
-
   - id: "pr-max-entropy"
     order: 2
     category: "Image Representation"
