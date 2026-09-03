@@ -385,10 +385,27 @@ cursor:not-allowed;
 
 #publications{
 
-margin-top:60px;
+max-width:1250px;
+
+margin:80px auto 0;
+
+padding:0 40px;
 
 }
 
+
+#publication-list{
+
+width:calc(100% - 370px);
+
+}
+
+
+#publications h2{
+
+margin-bottom:30px;
+
+}
 
 
 
