@@ -1,14 +1,17 @@
 [
   {
-    "title": "Maximum-Entropy Polar Harmonic Transforms for Information-Density-Driven Image Representation",
-    "journal": "Pattern Recognition",
+    "title": "A heterogeneous Hopfield neural network with discrete memristor: modeling, dynamics, and application in medical image encryption",
+    "authors": [
+      "Huiqun Zou",
+      "Yang Lu",
+      "Wenjiao Li",
+      "Wenhui Li",
+      "Xiuli Chai"
+    ],
+    "journal": "Expert Systems with Applications",
     "year": "2026",
-    "status": "Accepted"
-  },
-  {
-    "title": "Robust Reversible Image Watermarking Based on the Zeros Distribution of Orthogonal Moments",
-    "journal": "Signal Processing",
-    "year": "2026",
-    "status": "Accepted"
+    "doi": "10.1016/j.eswa.2026.131457",
+    "doi_url": "https://doi.org/10.1016/j.eswa.2026.131457",
+    "url": "https://doi.org/10.1016/j.eswa.2026.131457"
   }
 ]
