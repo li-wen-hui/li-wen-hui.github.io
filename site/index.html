@@ -36,9 +36,12 @@ Henan University
 </div>
 
 <div class="profile-links">
-<a href="https://orcid.org/0000-0008-4156-6373">ORCID</a>
+<a href="https://orcid.org/0009-0008-4156-6373">ORCID</a>
 <a href="https://github.com/li-wen-hui">GitHub</a>
-<a>Google Scholar</a>
+<a href="https://scholar.google.com/citations?user=M1kKaQ0AAAAJ"
+target="_blank">
+Google Scholar
+</a>
 </div>
 </aside>
 
@@ -75,35 +78,13 @@ with robustness, invariance, and reversibility.
 </div>
 </section>
 
-
 <section>
+
 <h2>Selected Publications</h2>
 
-<div class="paper">
-<h3>
-Maximum-Entropy Polar Harmonic Transforms for Information-Density-Driven Image Representation
-</h3>
-<p>Pattern Recognition · Accepted</p>
-<div class="buttons">
-<button>Paper</button>
-<button>DOI</button>
-<button>BibTeX</button>
+<div id="publications">
+Loading publications...
 </div>
-</div>
-
-
-<div class="paper">
-<h3>
-Robust Reversible Image Watermarking Based on the Zeros Distribution of Orthogonal Moments
-</h3>
-<p>Signal Processing · Accepted</p>
-<div class="buttons">
-<button>Paper</button>
-<button>DOI</button>
-<button>BibTeX</button>
-</div>
-</div>
-
 
 </section>
 
@@ -113,7 +94,77 @@ Robust Reversible Image Watermarking Based on the Zeros Distribution of Orthogon
 
 <footer>
 Academic Homepage · Wenhui Li
-</footer>
+<footer>
+
+
+<script>
+
+fetch("data/publications.json")
+
+.then(response => response.json())
+
+.then(publications => {
+
+
+let html = "";
+
+
+publications.forEach(pub => {
+
+
+html += `
+
+<div class="paper">
+
+<h3>
+${pub.title}
+</h3>
+
+<p>
+${pub.journal || ""} 
+${pub.year ? " · " + pub.year : ""}
+</p>
+
+<div class="buttons">
+
+<button>Paper</button>
+
+<button>DOI</button>
+
+<button>BibTeX</button>
+
+</div>
+
+</div>
+
+
+`;
+
+
+});
+
+
+document.getElementById(
+"publications"
+).innerHTML = html;
+
+
+})
+
+.catch(error => {
+
+
+document.getElementById(
+"publications"
+).innerHTML =
+"Unable to load publications";
+
+
+});
+
+
+</script>
+
 
 </body>
 </html>
