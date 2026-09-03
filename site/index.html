@@ -5,13 +5,15 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>
 Wenhui Li | Academic Homepage
 </title>
 
+
 <link rel="stylesheet" href="style.css">
+
 
 </head>
 
@@ -19,42 +21,12 @@ Wenhui Li | Academic Homepage
 <body>
 
 
-<nav>
+<!-- Header -->
 
-<div class="brand">
-Wenhui Li
-</div>
+<header class="hero">
 
 
-<div class="menu">
-
-<a href="#">
-Home
-</a>
-
-<a href="#">
-Research
-</a>
-
-<a href="#publications">
-Publications
-</a>
-
-<a href="#">
-CV
-</a>
-
-</div>
-
-</nav>
-
-
-
-<div class="container">
-
-
-
-<aside>
+<div class="identity">
 
 
 <div class="avatar">
@@ -64,71 +36,59 @@ CV
 </div>
 
 
+
+<div class="name-block">
+
+
 <h1>
 Wenhui Li
 </h1>
 
 
-<p class="zh">
+<p class="chinese">
 李文辉
 </p>
 
 
-
-<div class="role">
-
+<p class="position">
 Master's Student<br>
-
 Control Science and Engineering<br>
-
 Henan University
-
-</div>
-
+</p>
 
 
-<div class="profile-links">
 
+<div class="links">
 
 <a href="https://orcid.org/0009-0008-4156-6373"
 target="_blank">
-
 ORCID
-
 </a>
-
 
 
 <a href="https://github.com/li-wen-hui"
 target="_blank">
-
 GitHub
-
 </a>
-
 
 
 <a href="https://scholar.google.com/citations?user=M1kKaQ0AAAAJ"
 target="_blank">
-
 Google Scholar
-
 </a>
 
 
 </div>
 
 
-</aside>
+</div>
+
+
+</div>
 
 
 
-
-<main>
-
-
-
-<section>
+<div class="hero-text">
 
 
 <h2>
@@ -146,11 +106,20 @@ and robust reversible watermarking.
 </p>
 
 
-</section>
+</div>
+
+
+</header>
 
 
 
 
+
+<main>
+
+
+
+<!-- Research -->
 
 <section>
 
@@ -161,42 +130,47 @@ Research Interests
 
 
 
-<div class="tags">
+<div class="interest-grid">
 
-<span>
+
+<div>
 Image Representation
-</span>
+</div>
 
 
-<span>
+<div>
 Multimedia Security
-</span>
+</div>
 
 
-<span>
+<div>
 Orthogonal Moments
-</span>
+</div>
 
 
-<span>
+<div>
 Robust Reversible Watermarking
-</span>
+</div>
 
 
 </div>
 
 
 
-
 <div class="focus">
+
 
 <h3>
 Research Focus
 </h3>
 
 
+<p>
+
 Principled mathematical representations and secure multimedia processing
 with robustness, invariance, and reversibility.
+
+</p>
 
 
 </div>
@@ -208,6 +182,8 @@ with robustness, invariance, and reversibility.
 
 
 
+
+<!-- Publications -->
 
 <section id="publications">
 
@@ -225,7 +201,6 @@ Loading publications...
 </div>
 
 
-
 </section>
 
 
@@ -233,18 +208,45 @@ Loading publications...
 </main>
 
 
-</div>
-
 
 
 
 
 <footer>
 
-Academic Homepage · Wenhui Li
+
+<p>
+Wenhui Li · Academic Homepage
+</p>
+
+
+<div>
+
+<a href="https://orcid.org/0009-0008-4156-6373">
+ORCID
+</a>
+
+&nbsp; · &nbsp;
+
+
+<a href="https://github.com/li-wen-hui">
+GitHub
+</a>
+
+
+&nbsp; · &nbsp;
+
+
+<a href="https://scholar.google.com/citations?user=M1kKaQ0AAAAJ">
+Google Scholar
+</a>
+
+
+</div>
+
+
 
 </footer>
-
 
 
 
@@ -260,59 +262,21 @@ fetch("data/publications.json")
 .then(response => response.json())
 
 
-.then(publications => {
+.then(publications=>{
+
+
+let html="";
 
 
 
-let html = "";
-
-
-
-publications.forEach(pub => {
-
-
-
-let paperLink = pub.url 
-? 
-`
-<a href="${pub.url}" target="_blank">
-Paper
-</a>
-`
-:
-"";
-
-
-
-let doiLink = pub.doi_url
-?
-`
-<a href="${pub.doi_url}" target="_blank">
-DOI
-</a>
-`
-:
-"";
-
-
-
-let bibLink =
-pub.bibtex
-?
-`
-<a href="${pub.bibtex}" target="_blank">
-BibTeX
-</a>
-`
-:
-"";
-
-
+publications.forEach(pub=>{
 
 
 html += `
 
-<div class="paper">
+
+<div class="paper-card">
+
 
 
 <h3>
@@ -325,15 +289,13 @@ ${pub.title}
 
 <p class="authors">
 
-${pub.authors 
-? pub.authors.join(", ")
-: ""}
+${pub.authors ? pub.authors.join(", ") : ""}
 
 </p>
 
 
 
-<p>
+<p class="journal">
 
 ${pub.journal || ""}
  · 
@@ -343,15 +305,26 @@ ${pub.year || ""}
 
 
 
-<div class="buttons">
+<div class="paper-buttons">
 
 
-<a href="${pub.url || '#'}"
+
+${
+pub.url
+?
+`
+<a href="${pub.url}"
 target="_blank">
-
 Paper
-
 </a>
+`
+:
+`
+<span class="disabled">
+Paper
+</span>
+`
+}
 
 
 
@@ -380,8 +353,9 @@ Code
 
 </div>
 
-`;
 
+
+`;
 
 
 });
@@ -391,21 +365,21 @@ Code
 document.getElementById(
 "publication-list"
 )
-.innerHTML = html;
+.innerHTML=html;
 
 
 
 })
 
 
-.catch(error => {
 
+.catch(()=>{
 
 
 document.getElementById(
 "publication-list"
 )
-.innerHTML =
+.innerHTML=
 "Unable to load publications";
 
 
@@ -414,6 +388,7 @@ document.getElementById(
 
 
 </script>
+
 
 
 
