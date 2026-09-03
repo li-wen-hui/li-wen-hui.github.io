@@ -334,12 +334,9 @@ ${pub.title}
 
 
 
-<p>
-
+<p class="authors">
 ${pub.authors ? pub.authors.join(", ") : ""}
-
 </p>
-
 
 
 
@@ -360,14 +357,24 @@ ${pub.year || ""}
 <div class="buttons">
 
 
-${paperLink}
+<a href="${pub.url || '#'}"
+target="_blank">
+Paper
+</a>
 
 
-${doiLink}
+
+<a href="${pub.doi_url || '#'}"
+target="_blank">
+DOI
+</a>
 
 
-${bibLink}
 
+<a href="#"
+target="_blank">
+BibTeX
+</a>
 
 
 </div>
