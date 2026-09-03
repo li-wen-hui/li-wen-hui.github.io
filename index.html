@@ -1,78 +1,153 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Wenhui Li</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Wenhui Li | Academic Homepage</title>
+  <meta name="description" content="Academic homepage of Wenhui Li - image representation, multimedia security, orthogonal moments, and robust reversible watermarking.">
+  <meta name="author" content="Wenhui Li">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://li-wen-hui.github.io/">
 
-<style>
-body{
-    font-family: Arial, sans-serif;
-    max-width:900px;
-    margin:50px auto;
-    line-height:1.8;
-}
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Wenhui Li | Academic Homepage">
+  <meta property="og:description" content="Academic homepage of Wenhui Li - image representation, multimedia security, orthogonal moments, and robust reversible watermarking.">
+  <meta property="og:url" content="https://li-wen-hui.github.io/">
+  <meta property="og:image" content="https://li-wen-hui.github.io/assets/img/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wenhui Li | Academic Homepage">
+  <meta name="twitter:description" content="Academic homepage of Wenhui Li - image representation, multimedia security, orthogonal moments, and robust reversible watermarking.">
+  <meta name="twitter:image" content="https://li-wen-hui.github.io/assets/img/og-image.png">
 
-h1{
-    color:#1f4e79;
-}
+  <meta name="theme-color" content="#f5f7fa">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/rss+xml" title="Academic Updates" href="rss.xml">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 
-h2{
-    border-bottom:2px solid #1f4e79;
-    padding-bottom:5px;
-}
-
-</style>
-
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Wenhui Li","url":"https://li-wen-hui.github.io/","email":"mailto:liwenhui@henu.edu.cn","affiliation":{"@type":"CollegeOrUniversity","name":"Henan University"}}
+  </script>
 </head>
 
 <body>
+  <div id="progress" class="progress"></div>
 
-<h1>Wenhui Li</h1>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="site-name" href="#home"><span id="brandName">Wenhui Li</span></a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+      </nav>
+      <div class="nav-tools">
+        <a id="cvTop" class="quiet-link" href="Wenhui_Li_CV.pdf" target="_blank" rel="noopener">CV</a>
+        <button id="theme" class="theme-button" aria-label="Toggle color theme">◐</button>
+      </div>
+    </div>
+  </header>
 
-<p>
-Master Student<br>
-School of Control Science and Engineering<br>
-Henan University
-</p>
+  <main>
+    <section id="home" class="home-section">
+      <div class="profile-column reveal">
+        <div class="portrait-shell">
+          <img src="assets/img/profile.jpg" alt="Portrait of Wenhui Li">
+        </div>
 
+        <div class="identity-block">
+          <h1 id="heroName">Wenhui Li</h1>
+          <div id="heroNameZh" class="name-zh"></div>
+          <p id="headline" class="role"></p>
+          <p class="affiliation"><span id="affiliation"></span><br><span id="department"></span></p>
+        </div>
 
-<h2>Research Interests</h2>
+        <div class="sidebar-block">
+          <h3>Contact</h3>
+          <a id="emailLink" href="#"></a>
+        </div>
 
-<p>
-Image Representation<br>
-Multimedia Security<br>
-Robust Reversible Watermarking
-</p>
+        <div class="sidebar-block">
+          <h3>Profiles</h3>
+          <div id="profileLinks" class="profile-links"></div>
+        </div>
 
+        <div id="scholarMini" class="scholar-mini" hidden></div>
+      </div>
 
-<h2>About Me</h2>
+      <div class="intro-column reveal delay">
+        <p id="heroBio" class="bio"></p>
 
-<p>
-I am currently pursuing my Master's degree in Control Science and Engineering at Henan University.
-My research focuses on image representation, orthogonal moments, and multimedia security.
-</p>
+        <div class="research-block">
+          <h2>Research Interests</h2>
+          <div id="interests" class="interest-list"></div>
+        </div>
 
+        <div class="academic-note">
+          <span class="academic-note-label">Research focus</span>
+          <p>Principled image representations and robust multimedia processing, with an emphasis on transform structure, invariance, and reversibility.</p>
+        </div>
+      </div>
+    </section>
 
-<h2>Publications</h2>
+    <section id="news" class="content-section reveal">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Recent Updates</span>
+          <h2>News</h2>
+        </div>
+      </div>
+      <div id="newsList" class="news-list"></div>
+      <button id="showNews" class="show-more" hidden>Show all updates</button>
+    </section>
 
-<p>
-[1] Attack-Aware Metric Learning With Polar Harmonic Fourier Moments for Robust Reversible Color Image Watermarking.
-IEEE Transactions on Image Processing, Under Review.
-</p>
+    <section id="publications" class="content-section publications-section reveal">
+      <div class="section-heading publication-heading">
+        <div>
+          <span class="eyebrow">Selected Work</span>
+          <h2>Selected Publications</h2>
+        </div>
+        <div class="publication-meta-links">
+          <a id="scholarAll" href="#" target="_blank" rel="noopener" hidden>Full list on Google Scholar →</a>
+          <a href="publications.bib">BibTeX</a>
+        </div>
+      </div>
 
+      <div class="publication-controls">
+        <label class="search-box">
+          <span>⌕</span>
+          <input id="pubSearch" type="search" placeholder="Search publications">
+        </label>
+        <div id="categoryFilters" class="category-filters"></div>
+      </div>
 
-<p>
-[2] Maximum-Entropy Polar Harmonic Transforms for Information-Density-Driven Image Representation.
-Pattern Recognition, Accepted.
-</p>
+      <div id="pubGroups" class="publication-groups"></div>
+    </section>
+  </main>
 
+  <footer>
+    <div><strong id="footerName">Wenhui Li</strong> · <span id="footerAffiliation">Henan University</span> · <span id="year"></span></div>
+    <div class="footer-links"><a href="academic-profile.json">JSON</a><a href="publications.bib">BibTeX</a><a href="rss.xml">RSS</a></div>
+  </footer>
 
-<p>
-[3] Robust Reversible Image Watermarking Based on the Zeros Distribution of Orthogonal Moments.
-Signal Processing, Accepted.
-</p>
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="backdrop" data-close></div>
+    <div class="modal-card">
+      <div class="modal-head">
+        <div><small>Citation</small><h3 id="bibTitle">BibTeX</h3></div>
+        <button data-close aria-label="Close">×</button>
+      </div>
+      <pre id="bibCode"></pre>
+      <div class="modal-actions">
+        <button id="copyBib" class="action primary-action">Copy BibTeX</button>
+        <button class="action" data-close>Close</button>
+      </div>
+    </div>
+  </div>
 
-
+  <script src="assets/js/app.js"></script>
 </body>
-
 </html>
