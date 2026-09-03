@@ -1,127 +1,68 @@
+#!/usr/bin/env python3
 """
-Academic data synchronization
+Generate academic master data.
 
-Rules:
-1. publications.yml is the ONLY source of publications.
-2. External APIs only update metadata.
-3. Never add/remove publications automatically.
+Source of truth:
+- content/profile.yml
+- content/publications.yml
+- content/news.yml
+
+External services only provide metadata.
+They never add or keep deleted papers.
 """
 
-
-import json
 from pathlib import Path
-
+import json
+import yaml
+from datetime import datetime
 
 ROOT = Path(__file__).resolve().parents[1]
-
-
 CACHE = ROOT / "data" / "cache"
+CONTENT = ROOT / "content"
 
 
-def load_json(path):
-
-    if path.exists():
-        return json.loads(path.read_text(
-            encoding="utf-8"
-        ))
-
-    return {}
+def load_yaml(path):
+    if not path.exists():
+        return {}
+    return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
 
 
-
-def save_json(path,data):
-
-    path.parent.mkdir(
-        parents=True,
-        exist_ok=True
-    )
-
+def save_json(path, data):
+    path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
-        json.dumps(
-            data,
-            indent=2,
-            ensure_ascii=False
-        ),
+        json.dumps(data, indent=2, ensure_ascii=False),
         encoding="utf-8"
     )
 
 
-
-def sync_github():
-
-    print("Sync GitHub statistics")
-
-    github = {
-        "enabled": True
-    }
-
-    save_json(
-        CACHE/"github.json",
-        github
-    )
-
-
-
-def sync_scholar():
-
-    print("Sync Google Scholar statistics")
-
-    scholar = {
-
-        "enabled": True,
-
-        # future:
-        # citation_count
-        # h_index
-
-    }
-
-    save_json(
-        CACHE/"scholar.json",
-        scholar
-    )
-
-
-
-def sync_crossref():
-
-    print("Sync Crossref metadata")
-
-    crossref = {
-
-        "enabled": True,
-
-        # DOI metadata only
-
-    }
-
-
-    save_json(
-        CACHE/"crossref.json",
-        crossref
-    )
-
-
-
 def main():
+    print("Sync academic data")
+
+    site_cfg = load_yaml(ROOT / "config" / "site.yml")
+    profile = load_yaml(CONTENT / "profile.yml")
+    publications = load_yaml(CONTENT / "publications.yml")
+    news = load_yaml(CONTENT / "news.yml")
+
+    master = {
+        "site": site_cfg.get("site", {}),
+        "profile": profile.get("profile", {}),
+        "publications": publications.get("publications", []),
+        "news": news.get("news", []),
+        "sync": {
+            "updated": datetime.now().strftime("%Y-%m-%d"),
+            "orcid": site_cfg.get("sync", {}).get("orcid", {}),
+            "crossref": site_cfg.get("sync", {}).get("crossref", {}),
+            "scholar": site_cfg.get("sync", {}).get("scholar", {}),
+            "github": site_cfg.get("sync", {}).get("github", {})
+        }
+    }
+
+    save_json(CACHE / "master.json", master)
 
     print(
-        "Start academic synchronization"
+        f"Updated master.json: {len(master['publications'])} publications"
     )
 
 
-    sync_github()
-
-    sync_scholar()
-
-    sync_crossref()
-
-
-    print(
-        "Sync finished."
-    )
-
-
-if __name__=="__main__":
-
+if __name__ == "__main__":
     main()
