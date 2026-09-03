@@ -5,15 +5,13 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>
 Wenhui Li | Academic Homepage
 </title>
 
-
 <link rel="stylesheet" href="style.css">
-
 
 </head>
 
@@ -21,12 +19,43 @@ Wenhui Li | Academic Homepage
 <body>
 
 
-<!-- Header -->
+<nav>
 
-<header class="hero">
+<div class="brand">
+Wenhui Li
+</div>
 
 
-<div class="identity">
+<div class="menu">
+
+<a href="#">
+Home
+</a>
+
+<a href="#">
+Research
+</a>
+
+<a href="#publications">
+Publications
+</a>
+
+<a href="#">
+CV
+</a>
+
+</div>
+
+</nav>
+
+
+
+
+<div class="container">
+
+
+
+<aside>
 
 
 <div class="avatar">
@@ -36,59 +65,71 @@ Wenhui Li | Academic Homepage
 </div>
 
 
-
-<div class="name-block">
-
-
 <h1>
 Wenhui Li
 </h1>
 
 
-<p class="chinese">
+<p class="zh">
 李文辉
 </p>
 
 
-<p class="position">
+<div class="role">
+
 Master's Student<br>
+
 Control Science and Engineering<br>
+
 Henan University
-</p>
+
+</div>
 
 
 
-<div class="links">
+<div class="profile-links">
+
 
 <a href="https://orcid.org/0009-0008-4156-6373"
 target="_blank">
+
 ORCID
+
 </a>
+
 
 
 <a href="https://github.com/li-wen-hui"
 target="_blank">
+
 GitHub
+
 </a>
+
 
 
 <a href="https://scholar.google.com/citations?user=M1kKaQ0AAAAJ"
 target="_blank">
+
 Google Scholar
+
 </a>
 
 
 </div>
 
 
-</div>
-
-
-</div>
+</aside>
 
 
 
-<div class="hero-text">
+
+
+<main>
+
+
+
+<section>
 
 
 <h2>
@@ -106,20 +147,11 @@ and robust reversible watermarking.
 </p>
 
 
-</div>
-
-
-</header>
+</section>
 
 
 
 
-
-<main>
-
-
-
-<!-- Research -->
 
 <section>
 
@@ -129,31 +161,31 @@ Research Interests
 </h2>
 
 
+<div class="tags">
 
-<div class="interest-grid">
 
-
-<div>
+<span>
 Image Representation
-</div>
+</span>
 
 
-<div>
+<span>
 Multimedia Security
-</div>
+</span>
 
 
-<div>
+<span>
 Orthogonal Moments
-</div>
+</span>
 
 
-<div>
+<span>
 Robust Reversible Watermarking
-</div>
+</span>
 
 
 </div>
+
 
 
 
@@ -165,12 +197,8 @@ Research Focus
 </h3>
 
 
-<p>
-
 Principled mathematical representations and secure multimedia processing
 with robustness, invariance, and reversibility.
-
-</p>
 
 
 </div>
@@ -181,9 +209,6 @@ with robustness, invariance, and reversibility.
 
 
 
-
-
-<!-- Publications -->
 
 <section id="publications">
 
@@ -201,11 +226,16 @@ Loading publications...
 </div>
 
 
+
 </section>
 
 
 
+
 </main>
+
+
+</div>
 
 
 
@@ -214,37 +244,7 @@ Loading publications...
 
 <footer>
 
-
-<p>
-Wenhui Li · Academic Homepage
-</p>
-
-
-<div>
-
-<a href="https://orcid.org/0009-0008-4156-6373">
-ORCID
-</a>
-
-&nbsp; · &nbsp;
-
-
-<a href="https://github.com/li-wen-hui">
-GitHub
-</a>
-
-
-&nbsp; · &nbsp;
-
-
-<a href="https://scholar.google.com/citations?user=M1kKaQ0AAAAJ">
-Google Scholar
-</a>
-
-
-</div>
-
-
+Academic Homepage · Wenhui Li
 
 </footer>
 
@@ -258,9 +258,7 @@ Google Scholar
 
 fetch("data/publications.json")
 
-
-.then(response => response.json())
-
+.then(response=>response.json())
 
 .then(publications=>{
 
@@ -268,53 +266,40 @@ fetch("data/publications.json")
 let html="";
 
 
-
 publications.forEach(pub=>{
 
 
-html += `
+html+=`
 
-
-<div class="paper-card">
-
+<div class="paper">
 
 
 <h3>
-
 ${pub.title}
-
 </h3>
 
 
-
-<p class="authors">
-
-${pub.authors ? pub.authors.join(", ") : ""}
-
+<p>
+${pub.authors ? pub.authors.join(", "):""}
 </p>
 
 
-
-<p class="journal">
-
+<p>
 ${pub.journal || ""}
  · 
 ${pub.year || ""}
-
 </p>
 
 
 
-<div class="paper-buttons">
-
+<div class="buttons">
 
 
 ${
 pub.url
 ?
 `
-<a href="${pub.url}"
-target="_blank">
+<a href="${pub.url}" target="_blank">
 Paper
 </a>
 `
@@ -332,8 +317,7 @@ ${
 pub.code
 ?
 `
-<a href="${pub.code}"
-target="_blank">
+<a href="${pub.code}" target="_blank">
 Code
 </a>
 `
@@ -350,49 +334,30 @@ Code
 </div>
 
 
-
 </div>
-
 
 
 `;
 
 
+
 });
 
 
 
 document.getElementById(
 "publication-list"
-)
-.innerHTML=html;
+).innerHTML=html;
 
-
-
-})
-
-
-
-.catch(()=>{
-
-
-document.getElementById(
-"publication-list"
-)
-.innerHTML=
-"Unable to load publications";
 
 
 });
-
 
 
 </script>
 
 
 
-
 </body>
-
 
 </html>
