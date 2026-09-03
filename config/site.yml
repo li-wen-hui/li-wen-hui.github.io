@@ -1,60 +1,19 @@
 site:
-  url: "https://li-wen-hui.github.io/"
   title: "Wenhui Li | Academic Homepage"
-  description: "Academic homepage of Wenhui Li, focusing on image representation and multimedia security."
-  language: "en"
-  timezone: "Asia/Shanghai"
-
+  url: "https://li-wen-hui.github.io/"
 
 profile:
   name: "Wenhui Li"
-  name_zh: "李文辉"
-  initials: "WL"
-
-  headline: "M.S. Student | Image Representation and Multimedia Security"
-
   affiliation: "Henan University"
-  department: "Control Science and Engineering"
-  advisor: "Prof. Xiuli Chai"
-
-  location: "Zhengzhou, China"
-
-  email: "liwenhui@henu.edu.cn"
-
   github_username: "li-wen-hui"
-
   orcid_id: "0009-0008-4156-6373"
-  orcid_url: "https://orcid.org/0009-0008-4156-6373"
-
-  scholar_author_id: "M1kKaQ0AAAAJ"
-  scholar_url: "https://scholar.google.com/citations?user=M1kKaQ0AAAAJ"
-
-
-# 自动同步
-# 注意：只同步统计，不修改论文列表
 
 sync:
-
   orcid:
     enabled: true
-
   crossref:
     enabled: true
-    polite_email: "liwenhui@henu.edu.cn"
-
-  scholar:
-    enabled: true
-    provider: "serpapi"
-
   github:
-    enabled: truerue
-
-
-
-analytics:
-  provider: "none"
-
-
-auto_cv:
-  enabled: true
-  filename: "Wenhui_Li_CV.pdf"
+    enabled: true
+  scholar:
+    enabled: false

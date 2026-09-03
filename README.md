@@ -1,2 +1,3 @@
-# li-wen-hui.github.io
-Academic homepage of Wenhui Li. Research interests include image representation and multimedia security.
+# Wenhui Li Academic Homepage V8
+
+Clean academic homepage without News module.
