@@ -312,30 +312,23 @@ BibTeX
 
 html += `
 
-
-
 <div class="paper">
 
 
 <h3>
 
-
-<a href="${pub.url || '#'}"
-target="_blank">
-
-
 ${pub.title}
-
-
-</a>
-
 
 </h3>
 
 
 
 <p class="authors">
-${pub.authors ? pub.authors.join(", ") : ""}
+
+${pub.authors 
+? pub.authors.join(", ")
+: ""}
+
 </p>
 
 
@@ -343,14 +336,10 @@ ${pub.authors ? pub.authors.join(", ") : ""}
 <p>
 
 ${pub.journal || ""}
-
  · 
-
 ${pub.year || ""}
 
-
 </p>
-
 
 
 
@@ -359,22 +348,30 @@ ${pub.year || ""}
 
 <a href="${pub.url || '#'}"
 target="_blank">
+
 Paper
+
 </a>
 
 
 
-<a href="${pub.doi_url || '#'}"
+${
+pub.code
+?
+`
+<a href="${pub.code}"
 target="_blank">
-DOI
+Code
 </a>
+`
+:
+`
+<span class="disabled">
+Code
+</span>
+`
+}
 
-
-
-<a href="#"
-target="_blank">
-BibTeX
-</a>
 
 
 </div>
@@ -382,7 +379,6 @@ BibTeX
 
 
 </div>
-
 
 `;
 
