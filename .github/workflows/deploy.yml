@@ -1,0 +1,101 @@
+name: Deploy Academic Homepage
+
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+  schedule:
+    # 每周日 UTC 0:00 自动更新
+    - cron: "0 0 * * 0"
+
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+
+    steps:
+
+      # 1. 获取代码
+      - name: Checkout
+        uses: actions/checkout@v4
+
+
+      # 2. 配置 Python
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+
+      # 3. 安装依赖
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+
+      # 4. 同步学术数据
+      - name: Sync academic data
+        run: |
+          python scripts/sync_sources.py
+
+
+      # 5. 生成主页
+      - name: Build website
+        run: |
+          python scripts/build_site.py
+
+
+      # 6. 保存自动更新的数据
+      - name: Commit updated data
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+
+          git add content/
+
+          git diff --cached --quiet || git commit -m "Auto update academic data"
+
+          git push
+
+
+      # 7. 上传 Pages
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
+
+
+
+  deploy:
+
+    needs: build
+
+    runs-on: ubuntu-latest
+
+
+    environment:
+
+      name: github-pages
+
+      url: ${{ steps.deployment.outputs.page_url }}
+
+
+    steps:
+
+      - name: Deploy GitHub Pages
+        id: deployment
+
+        uses: actions/deploy-pages@v4
