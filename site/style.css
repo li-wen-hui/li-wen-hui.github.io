@@ -418,19 +418,15 @@ color:var(--muted);
 .paper{
 
 display:flex;
-
-gap:25px;
-
+gap:30px;
 align-items:stretch;
-
-width:100%;
 
 }
 
 
 .paper-image{
 
-width:180px;
+width:220px;
 
 flex-shrink:0;
 
@@ -444,21 +440,11 @@ overflow:hidden;
 .paper-image img{
 
 width:100%;
-
 height:100%;
 
 object-fit:contain;
 
 background:white;
-
-}
-
-
-.paper-content{
-
-flex:1;
-
-min-width:0;
 
 }
 @media(max-width:850px){
