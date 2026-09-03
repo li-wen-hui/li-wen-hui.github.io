@@ -375,66 +375,32 @@ cursor:not-allowed;
 }
 
 
-
-
-
-/*
-    Publications
-    保持和 main 同宽
-*/
-
 #publications{
 
-max-width:1250px;
+    max-width:1250px;
 
-margin:80px auto 0;
+    margin:80px auto 0;
 
-padding:0 40px;
-
-}
-
-
-#publications h2{
-
-margin:0 0 30px 0;
+    padding:0 40px;
 
 }
-
-
-#publications{
-
-max-width:1250px;
-
-margin:80px auto 0;
-
-padding:0 40px;
-
-}
-
 
 
 #publication-list{
 
-margin-left:370px;
+    margin-left:370px;
 
-width:600px;
-
-}
-
-
-
-#publications h2{
-
-margin-left:0;
+    width:calc(100% - 370px);
 
 }
 
 
 #publication-list .paper{
 
-width:100%;
+    width:100%;
 
 }
+
 
 
 
