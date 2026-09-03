@@ -377,30 +377,27 @@ cursor:not-allowed;
 
 #publications{
 
-    max-width:1250px;
+max-width:1250px;
 
-    margin:80px auto 0;
+margin:80px auto 0;
 
-    padding:0 40px;
+padding:0 40px;
 
 }
 
 
 #publication-list{
 
-    margin-left:370px;
-
-    width:calc(100% - 370px);
+width:100%;
 
 }
 
 
 #publication-list .paper{
 
-    width:100%;
+width:100%;
 
 }
-
 
 
 
