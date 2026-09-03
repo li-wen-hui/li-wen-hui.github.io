@@ -1,61 +1,135 @@
 name: Deploy Academic Homepage
 
+
 on:
+
   push:
-    branches: [main]
+    branches:
+      - main
 
   workflow_dispatch:
 
   schedule:
+    # 每周一 02:00 自动同步 ORCID
     - cron: "0 2 * * 1"
 
 
+
 permissions:
+
   contents: write
   pages: write
   id-token: write
 
 
+
 jobs:
 
+
   deploy:
+
 
     runs-on: ubuntu-latest
 
 
+
     steps:
 
-      # 下载仓库
+
+      # ======================
+      # Checkout repository
+      # ======================
+
       - name: Checkout
+
         uses: actions/checkout@v4
 
-
-      # 配置 Python
-      - name: Setup Python
-        uses: actions/setup-python@v5
         with:
+
+          fetch-depth: 0
+
+
+
+      # ======================
+      # Python environment
+      # ======================
+
+      - name: Setup Python
+
+        uses: actions/setup-python@v5
+
+        with:
+
           python-version: "3.x"
 
 
-      # 安装 ORCID 同步需要的库
+
+      # ======================
+      # Install packages
+      # ======================
+
       - name: Install dependencies
+
         run: |
+
           pip install requests
 
 
-      # 从 ORCID 获取论文
+
+      # ======================
+      # Sync ORCID publications
+      # ======================
+
       - name: Sync ORCID publications
+
         run: |
+
           python scripts/sync_orcid.py
 
 
-      # 上传网页
+
+      # ======================
+      # Save updated data
+      # ======================
+
+      - name: Commit updated publications
+
+        run: |
+
+          git config --global user.name "github-actions"
+
+          git config --global user.email "github-actions@github.com"
+
+
+          git add site/data/publications.json
+
+
+          git commit -m "Update publications from ORCID" || echo "No changes"
+
+
+          git push
+
+
+
+      # ======================
+      # Upload website
+      # ======================
+
       - name: Upload website
+
         uses: actions/upload-pages-artifact@v3
+
         with:
+
           path: ./site
 
 
-      # 部署
+
+
+      # ======================
+      # Deploy Pages
+      # ======================
+
       - name: Deploy
+
         uses: actions/deploy-pages@v4
