@@ -51,7 +51,7 @@ for item in data["group"]:
 
 
 with open(
-    "data/publications.json",
+    "site/data/publications.json",
     "w",
     encoding="utf-8"
 ) as f:
