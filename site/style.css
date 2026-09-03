@@ -383,31 +383,25 @@ cursor:not-allowed;
 
     margin:80px auto 0;
 
-    padding-left:40px;
+    padding:0 40px;
 
-    padding-right:40px;
+    transform:translateX(-370px);
 
 }
-
 
 
 #publication-list{
 
-    width:100%;
+    width:calc(100% + 370px);
 
 }
 
-
-/* 向左扩展到头像左侧 */
 
 #publication-list .paper{
 
-    width:calc(100% + 370px);
-
-    margin-left:-370px;
+    width:100%;
 
 }
-
 footer{
 
 
