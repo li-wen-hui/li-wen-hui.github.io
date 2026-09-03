@@ -388,12 +388,17 @@ cursor:not-allowed;
 
 #publication-list{
     width:100%;
+    display:block;
 }
 
 
 #publication-list .paper{
 
-    width:100%;
+    display:block;
+
+    width:100% !important;
+
+    max-width:none;
 
 }
 footer{
