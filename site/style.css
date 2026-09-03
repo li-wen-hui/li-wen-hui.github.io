@@ -393,6 +393,24 @@ cursor:not-allowed;
 #publication-list .paper{
     width:100%;
 }
+/* Fix publication width */
+
+#publications{
+    width:100%;
+    margin:0;
+    padding:0;
+}
+
+
+#publication-list{
+    width:100%;
+}
+
+
+#publication-list .paper{
+    width:100%;
+    max-width:none;
+}
 footer{
 
 
