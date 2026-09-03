@@ -1,4 +1,0 @@
-Wenhui Li
-Academic homepage
-Built automatically from ORCID/Crossref/Scholar/GitHub + curated YAML.
-https://li-wen-hui.github.io/

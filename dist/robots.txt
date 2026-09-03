@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://li-wen-hui.github.io/sitemap.xml
