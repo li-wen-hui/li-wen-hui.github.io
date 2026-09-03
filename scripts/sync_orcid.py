@@ -4,10 +4,12 @@ import json
 
 ORCID = "0009-0008-4156-6373"
 
-url = (
+
+ORCID_URL = (
     f"https://pub.orcid.org/v3.0/"
     f"{ORCID}/works"
 )
+
 
 headers = {
     "Accept": "application/json"
@@ -15,7 +17,7 @@ headers = {
 
 
 response = requests.get(
-    url,
+    ORCID_URL,
     headers=headers
 )
 
@@ -25,48 +27,110 @@ data = response.json()
 papers = []
 
 
-for item in data["group"]:
+for item in data.get("group", []):
 
     summary = item["work-summary"][0]
 
-    title = summary["title"]["title"]["value"]
+
+    title = (
+        summary
+        .get("title", {})
+        .get("title", {})
+        .get("value", "")
+    )
+
 
     year = ""
 
     if summary.get("publication-date"):
-        year = summary["publication-date"].get(
-            "year", {}
-        ).get(
-            "value",
-            ""
+
+        year = (
+            summary["publication-date"]
+            .get("year", {})
+            .get("value", "")
         )
 
 
     doi = ""
 
-journal = ""
+    if summary.get("external-ids"):
+
+        for eid in summary["external-ids"].get(
+            "external-id", []
+        ):
+
+            if eid.get(
+                "external-id-type"
+            ) == "doi":
+
+                doi = eid.get(
+                    "external-id-value",
+                    ""
+                )
 
 
-if summary.get("external-ids"):
+    # Crossref补充信息
 
-    for eid in summary["external-ids"].get("external-id", []):
-
-        if eid.get("external-id-type") == "doi":
-            doi = eid.get("external-id-value")
-
-
-if summary.get("journal-title"):
-    journal = summary["journal-title"]["value"]
+    journal = ""
+    authors = []
+    url = ""
 
 
-papers.append(
-{
-    "title": title,
-    "year": year,
-    "journal": journal,
-    "doi": doi
-}
-)
+    if doi:
+
+        try:
+
+            cr = requests.get(
+                f"https://api.crossref.org/works/{doi}"
+            )
+
+            cr_data = cr.json()["message"]
+
+
+            journal = (
+                cr_data
+                .get("container-title", [""])[0]
+            )
+
+
+            url = (
+                cr_data
+                .get("URL", "")
+            )
+
+
+            for author in cr_data.get(
+                "author",
+                []
+            ):
+
+                name = (
+                    author.get("given", "")
+                    + " "
+                    +
+                    author.get("family", "")
+                )
+
+                authors.append(name)
+
+
+        except Exception:
+
+            pass
+
+
+
+    papers.append(
+        {
+            "title": title,
+            "authors": authors,
+            "journal": journal,
+            "year": year,
+            "doi": doi,
+            "url": url
+        }
+    )
+
 
 
 with open(
@@ -75,9 +139,16 @@ with open(
     encoding="utf-8"
 ) as f:
 
+
     json.dump(
         papers,
         f,
         indent=2,
         ensure_ascii=False
     )
+
+
+print(
+    "Updated publications:",
+    len(papers)
+)
