@@ -1,15 +1,28 @@
 name: Deploy Academic Homepage
 
+<<<<<<< HEAD
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
+=======
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+
+>>>>>>> 72f1d2ca2960649601a32c9f1acf35401e11ac8e
 permissions:
   contents: read
   pages: write
   id-token: write
 
+<<<<<<< HEAD
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,3 +39,45 @@ jobs:
       name: github-pages
     steps:
       - uses: actions/deploy-pages@v4
+=======
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
+
+
+
+  deploy:
+
+    needs: build
+
+    runs-on: ubuntu-latest
+
+    environment:
+
+      name: github-pages
+
+      url: ${{ steps.deployment.outputs.page_url }}
+
+
+    steps:
+
+      - name: Deploy GitHub Pages
+
+        id: deployment
+
+        uses: actions/deploy-pages@v4
+>>>>>>> 72f1d2ca2960649601a32c9f1acf35401e11ac8e
