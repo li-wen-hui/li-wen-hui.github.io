@@ -352,12 +352,13 @@ grid-template-columns:1fr;
 
 max-width:1250px;
 
-margin:80px auto;
+margin:80px auto 0;
 
-padding:0 40px;
+padding-left:370px;
+
+padding-right:40px;
 
 }
-
 
 
 #publications .paper{
