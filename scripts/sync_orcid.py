@@ -207,32 +207,33 @@ for item in data.get("group", []):
 
 
 
-    papers.append(
+    papers.append({
 
-        {
+"title": title,
 
-            "title": title,
+"authors": authors,
 
-            "authors": authors,
+"journal": journal,
 
-            "journal": journal,
+"year": year,
 
-            "year": year,
+"doi": doi,
 
-            "doi": doi,
+"doi_url":
+    (
+    f"https://doi.org/{doi}"
+    if doi else ""
+    ),
 
-            "doi_url":
-                (
-                    f"https://doi.org/{doi}"
-                    if doi
-                    else ""
-                ),
+"url":
+    (
+    f"https://doi.org/{doi}"
+    if doi else ""
+    ),
 
-            "url": paper_url
+"code": ""
 
-        }
-
-    )
+})
 
 
 
