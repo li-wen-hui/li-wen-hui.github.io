@@ -380,16 +380,19 @@ cursor:not-allowed;
 
 
 }
-
 #publications{
-margin-left:-370px;
+    width:100%;
 }
+
 
 #publication-list{
-margin-left:370px;
+    width:100%;
 }
 
-width:calc(...)
+
+#publication-list .paper{
+    width:100%;
+}
 footer{
 
 
