@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
 
 <meta charset="UTF-8">
@@ -35,6 +36,7 @@ Wenhui Li
 
 
 
+
 <div class="menu">
 
 
@@ -61,6 +63,7 @@ CV
 </div>
 
 
+
 </nav>
 
 
@@ -68,14 +71,16 @@ CV
 
 
 
-<!-- Main profile area -->
-
 
 <div class="container">
 
 
 
+
+
+
 <aside>
+
 
 
 
@@ -90,15 +95,18 @@ CV
 
 
 
+
 <h1>
 Wenhui Li
 </h1>
 
 
 
+
 <p class="zh">
 李文辉
 </p>
+
 
 
 
@@ -120,6 +128,7 @@ Henan University
 
 
 
+
 <div class="profile-links">
 
 
@@ -129,6 +138,7 @@ target="_blank">
 ORCID
 
 </a>
+
 
 
 
@@ -142,6 +152,7 @@ GitHub
 
 
 
+
 <a href="https://scholar.google.com/citations?user=M1kKaQ0AAAAJ"
 target="_blank">
 
@@ -151,11 +162,16 @@ Google Scholar
 
 
 
+
 </div>
 
 
 
+
+
 </aside>
+
+
 
 
 
@@ -199,12 +215,14 @@ and robust reversible watermarking.
 
 
 
+
 <section>
 
 
 <h2>
 Research Interests
 </h2>
+
 
 
 
@@ -239,12 +257,14 @@ Robust Reversible Watermarking
 
 
 
+
 <div class="focus">
 
 
 <h3>
 Research Focus
 </h3>
+
 
 
 <p>
@@ -260,6 +280,8 @@ with robustness, invariance, and reversibility.
 
 
 
+
+
 </section>
 
 
@@ -267,29 +289,16 @@ with robustness, invariance, and reversibility.
 
 
 
-</main>
 
-
-
-</div>
-
-
-
-
-
-
-
-
-<!-- Publications full width -->
 
 
 <section id="publications">
 
 
-
 <h2>
 Selected Publications
 </h2>
+
 
 
 
@@ -303,7 +312,23 @@ Loading publications...
 
 
 
+
 </section>
+
+
+
+
+
+
+
+</main>
+
+
+
+
+
+</div>
+
 
 
 
@@ -353,9 +378,8 @@ publications.forEach(pub => {
 
 
 
-
-
 html += `
+
 
 
 
@@ -375,11 +399,14 @@ ${pub.title}
 
 
 
+
 <p>
 
 ${pub.authors ? pub.authors.join(", ") : ""}
 
 </p>
+
+
 
 
 
@@ -401,8 +428,9 @@ ${pub.year || ""}
 
 
 
-<div class="buttons">
 
+
+<div class="buttons">
 
 
 
@@ -415,9 +443,7 @@ pub.url
 
 `
 
-<a href="${pub.url}"
-
-target="_blank">
+<a href="${pub.url}" target="_blank">
 
 Paper
 
@@ -438,6 +464,7 @@ Paper
 `
 
 }
+
 
 
 
@@ -452,9 +479,7 @@ pub.code
 
 `
 
-<a href="${pub.code}"
-
-target="_blank">
+<a href="${pub.code}" target="_blank">
 
 Code
 
@@ -481,23 +506,23 @@ Code
 
 
 
-</div>
-
-
-
-
-
-
 
 </div>
+
+
+
+
+
+
+
+</div>
+
 
 
 
 
 
 `;
-
-
 
 
 
@@ -537,7 +562,10 @@ document.getElementById(
 
 
 
+
+
 </script>
+
 
 
 
