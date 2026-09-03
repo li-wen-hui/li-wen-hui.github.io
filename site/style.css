@@ -416,50 +416,34 @@ color:var(--muted);
 }
 
 
-
+/* final publication image size */
 
 .paper{
-
-display:flex;
-
-gap:25px;
-
-align-items:flex-start;
-
+    display:flex;
+    gap:25px;
+    align-items:flex-start;
 }
 
 
 .paper-image{
-
-width:120px !important;
-
-height:120px !important;
-
-flex-shrink:0;
-
-border-radius:10px;
-
-overflow:hidden;
-
+    width:150px !important;
+    height:110px !important;
+    flex-shrink:0;
+    border-radius:10px;
+    overflow:hidden;
 }
 
 
 .paper-image img{
-
-width:100% !important;
-
-height:100% !important;
-
-object-fit:cover;
-
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover;
+    display:block;
 }
 
 
-
 .paper-content{
-
-flex:1;
-
+    flex:1;
 }
 @media(max-width:850px){
 
