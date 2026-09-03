@@ -1,19 +1,12 @@
 site:
-  title: "Wenhui Li | Academic Homepage"
-  url: "https://li-wen-hui.github.io/"
+  title: Wenhui Li Academic Homepage
 
 profile:
-  name: "Wenhui Li"
-  affiliation: "Henan University"
-  github_username: "li-wen-hui"
-  orcid_id: "0009-0008-4156-6373"
+  orcid_id: 0000-0008-4156-6373
+  github_username: li-wen-hui
 
-sync:
-  orcid:
-    enabled: true
-  crossref:
-    enabled: true
-  github:
-    enabled: true
-  scholar:
-    enabled: false
+automation:
+  github_actions: true
+  orcid: true
+  crossref: true
+  scholar: true
