@@ -141,8 +141,9 @@ color:white;
     justify-content:center;
     align-items:center;
 
-    width:72px;
+    min-width:72px;
     height:34px;
+    padding:0 14px;
 
     border-radius:8px;
 
@@ -157,11 +158,8 @@ color:white;
     text-decoration:none;
 
     transition:all 0.25s ease;
-
 }
 
-
-/* Paper 可点击 */
 
 .buttons a:hover{
 
@@ -175,9 +173,6 @@ color:white;
 
 }
 
-
-
-/* Code 禁用 */
 
 .buttons .disabled{
 
