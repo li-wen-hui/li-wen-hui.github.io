@@ -447,6 +447,31 @@ object-fit:contain;
 background:white;
 
 }
+.paper{
+
+padding:18px 25px;
+
+}
+
+
+.paper h3{
+
+margin-top:0;
+
+margin-bottom:12px;
+
+}
+
+
+.paper p{
+
+font-size:15px;
+
+line-height:1.6;
+
+margin:8px 0;
+
+}
 @media(max-width:850px){
 
 .container{
