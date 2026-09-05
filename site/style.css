@@ -407,7 +407,9 @@ font-size:17px;
 
 
 .profile-links .fa-orcid{
-    color:#a6ce39;
+
+    color:#a6ce39!important;
+
 }
 
 
