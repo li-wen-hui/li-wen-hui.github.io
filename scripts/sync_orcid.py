@@ -215,7 +215,7 @@ if pub_date:
 
 
 
-    papers.append({
+papers.append({
 
 "title": title,
 
@@ -224,6 +224,8 @@ if pub_date:
 "journal": journal,
 
 "year": year,
+
+"month": month,
 
 "doi": doi,
 
