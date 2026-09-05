@@ -426,7 +426,9 @@ align-items:stretch;
 
 .paper-image{
 
-width:220px;
+width:170px;
+
+height:140px;
 
 flex-shrink:0;
 
