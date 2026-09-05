@@ -64,19 +64,27 @@ for item in data.get("group", []):
     )
 
 
-    year = ""
+year = ""
 
-    pub_date = summary.get(
-        "publication-date"
+month = ""
+
+pub_date = summary.get(
+    "publication-date"
+)
+
+if pub_date:
+
+    year = (
+        pub_date
+        .get("year", {})
+        .get("value", "")
     )
 
-    if pub_date:
-
-        year = (
-            pub_date
-            .get("year", {})
-            .get("value", "")
-        )
+    month = (
+        pub_date
+        .get("month", {})
+        .get("value", "")
+    )
 
 
 
