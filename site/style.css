@@ -546,35 +546,25 @@ border-radius:20px;
 
 
 
-
-
-.focus,
 .paper{
-
 
 background:
 
 var(--panel);
 
-
 border:
 
 1px solid var(--line);
 
-
 border-radius:16px;
-
 
 padding:25px;
 
-
 margin-top:25px;
-
 
 backdrop-filter:
 
 blur(12px);
-
 
 }
 
@@ -595,10 +585,9 @@ serif;
 
 }
 
-
-
-
 .paper{
+
+position:relative;
 
 display:flex;
 
@@ -606,19 +595,27 @@ gap:30px;
 
 align-items:stretch;
 
-padding:18px 25px;
+padding:18px 25px 18px 30px;
+
+background:
+
+var(--panel);
+
+border:
+
+1px solid var(--line);
+
+border-radius:16px;
+
+margin-top:25px;
+
+overflow:hidden;
+
+backdrop-filter:blur(12px);
 
 box-shadow:
 
 0 0 30px rgba(80,160,255,.08);
-
-}
-
-.paper{
-
-position:relative;
-
-overflow:hidden;
 
 }
 .paper::before{
