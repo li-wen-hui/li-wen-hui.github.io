@@ -1,22 +1,5 @@
 [
   {
-    "title": "Maximum-entropy polar harmonic transforms for information-density-driven image representation",
-    "authors": [
-      "Xiuli Chai",
-      "Wenhui Li",
-      "Shuren Qi",
-      "Yajing Zhang",
-      "Zhihua Gan",
-      "Yushu Zhang"
-    ],
-    "journal": "Pattern Recognition",
-    "year": "2027",
-    "doi": "10.1016/j.patcog.2026.114823",
-    "doi_url": "https://doi.org/10.1016/j.patcog.2026.114823",
-    "url": "https://doi.org/10.1016/j.patcog.2026.114823",
-    "code": ""
-  },
-  {
     "title": "A heterogeneous Hopfield neural network with discrete memristor: modeling, dynamics, and application in medical image encryption",
     "authors": [
       "Huiqun Zou",
