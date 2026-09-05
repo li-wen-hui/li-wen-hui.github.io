@@ -249,15 +249,16 @@ border-radius:20px;
 .focus,
 .paper{
 
+
 background:var(--panel);
 
 border:1px solid var(--line);
 
 border-radius:16px;
 
-padding:18px 22px;
+padding:25px;
 
-margin-top:20px;
+margin-top:25px;
 
 }
 
@@ -425,11 +426,11 @@ align-items:stretch;
 
 .paper-image{
 
-width:170px;
-
-height:140px;
+width:220px;
 
 flex-shrink:0;
+
+}
 
 border-radius:10px;
 
