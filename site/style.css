@@ -546,29 +546,6 @@ border-radius:20px;
 
 
 
-.paper{
-
-background:
-
-var(--panel);
-
-border:
-
-1px solid var(--line);
-
-border-radius:16px;
-
-padding:25px;
-
-margin-top:25px;
-
-backdrop-filter:
-
-blur(12px);
-
-}
-
-
 
 
 .paper h3{
