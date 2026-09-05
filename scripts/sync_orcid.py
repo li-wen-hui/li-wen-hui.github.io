@@ -38,9 +38,7 @@ response.raise_for_status()
 data = response.json()
 
 
-
 papers = []
-
 
 
 # =========================
@@ -69,6 +67,10 @@ for item in data.get("group", []):
     month = ""
 
 
+    # =========================
+    # ORCID publication date
+    # =========================
+
     pub_date = summary.get(
         "publication-date"
     )
@@ -76,11 +78,13 @@ for item in data.get("group", []):
 
     if pub_date:
 
+
         year = (
             pub_date
             .get("year", {})
             .get("value", "")
         )
+
 
         month = (
             pub_date
@@ -89,9 +93,18 @@ for item in data.get("group", []):
         )
 
 
+        if month:
+
+            month = str(month).zfill(2)
+
+
+
+    # =========================
+    # DOI extraction
+    # =========================
+
     doi = ""
 
-    # DOI extraction
 
     external_ids = (
         summary
@@ -102,9 +115,11 @@ for item in data.get("group", []):
 
     for eid in external_ids:
 
+
         if eid.get(
             "external-id-type"
         ) == "doi":
+
 
             doi = (
                 eid
@@ -114,6 +129,7 @@ for item in data.get("group", []):
                 )
             )
 
+
             break
 
 
@@ -121,8 +137,6 @@ for item in data.get("group", []):
     journal = ""
 
     authors = []
-
-    paper_url = ""
 
 
 
@@ -155,31 +169,8 @@ for item in data.get("group", []):
             )
 
 
-            # Crossref publication date
 
-            date_parts = (
-                message
-                .get("published-print", {})
-                .get("date-parts", [[]])
-            )
-
-
-            if not date_parts[0]:
-
-                date_parts = (
-                    message
-                    .get("published-online", {})
-                    .get("date-parts", [[]])
-                )
-
-
-            if date_parts[0]:
-
-                if len(date_parts[0]) >= 2:
-
-                    month = str(
-                        date_parts[0][1]
-                    ).zfill(2)
+            # -------- journal --------
 
             journal = (
                 message
@@ -190,15 +181,59 @@ for item in data.get("group", []):
             )
 
 
-            paper_url = (
+
+            # -------- publication month --------
+
+            date_parts = (
                 message
                 .get(
-                    "URL",
-                    ""
+                    "published-print",
+                    {}
+                )
+                .get(
+                    "date-parts",
+                    [[]]
                 )
             )
 
 
+            if not date_parts[0]:
+
+
+                date_parts = (
+                    message
+                    .get(
+                        "published-online",
+                        {}
+                    )
+                    .get(
+                        "date-parts",
+                        [[]]
+                    )
+                )
+
+
+            if date_parts[0]:
+
+
+                if len(date_parts[0]) >= 1:
+
+
+                    year = str(
+                        date_parts[0][0]
+                    )
+
+
+                if len(date_parts[0]) >= 2:
+
+
+                    month = str(
+                        date_parts[0][1]
+                    ).zfill(2)
+
+
+
+            # -------- authors --------
 
             for author in message.get(
                 "author",
@@ -233,6 +268,7 @@ for item in data.get("group", []):
 
         except Exception as e:
 
+
             print(
                 "Crossref error:",
                 doi,
@@ -241,35 +277,49 @@ for item in data.get("group", []):
 
 
 
-papers.append({
+    # =========================
+    # Save each paper
+    # =========================
 
-"title": title,
+    papers.append({
 
-"authors": authors,
 
-"journal": journal,
+        "title": title,
 
-"year": year,
 
-"month": month,
+        "authors": authors,
 
-"doi": doi,
 
-"doi_url":
-    (
-    f"https://doi.org/{doi}"
-    if doi else ""
-    ),
+        "journal": journal,
 
-"url":
-    (
-    f"https://doi.org/{doi}"
-    if doi else ""
-    ),
 
-"code": ""
+        "year": year,
 
-})
+
+        "month": month,
+
+
+        "doi": doi,
+
+
+        "doi_url":
+            (
+                f"https://doi.org/{doi}"
+                if doi else ""
+            ),
+
+
+        "url":
+            (
+                f"https://doi.org/{doi}"
+                if doi else ""
+            ),
+
+
+        "code": ""
+
+
+    })
 
 
 
