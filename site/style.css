@@ -794,7 +794,7 @@ footer{
 text-align:center;
 
 
-padding:40px;
+padding:50px 20px;
 
 
 border-top:
@@ -803,6 +803,21 @@ border-top:
 
 
 color:var(--muted);
+
+
+}
+
+
+footer .profile-links{
+
+
+justify-content:center;
+
+
+margin-top:0;
+
+
+margin-bottom:25px;
 
 
 }
