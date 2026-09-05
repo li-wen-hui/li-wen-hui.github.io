@@ -349,9 +349,21 @@ author
 
 ${pub.journal || ""}
 
- · 
+${
+pub.year
+?
+" (" + pub.year + ")"
+:
+""
+}
 
-${pub.year || ""}
+${
+pub.month
+?
+", " + pub.month
+:
+""
+}
 
 </p>
 
