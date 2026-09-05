@@ -415,26 +415,18 @@ color:var(--muted);
 
 }
 
-
-
-
-
 .paper{
 
 display:flex;
-
-gap:25px;
-
-align-items:flex-start;
+gap:30px;
+align-items:stretch;
 
 }
 
 
 .paper-image{
 
-width:150px;
-
-height:190px;
+width:220px;
 
 flex-shrink:0;
 
@@ -445,27 +437,16 @@ overflow:hidden;
 }
 
 
-
 .paper-image img{
 
 width:100%;
-
 height:100%;
 
-object-fit:cover;
+object-fit:contain;
+
+background:white;
 
 }
-
-
-
-.paper-content{
-
-flex:1;
-
-}
-
-
-
 @media(max-width:850px){
 
 .container{
