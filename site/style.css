@@ -249,16 +249,15 @@ border-radius:20px;
 .focus,
 .paper{
 
-
 background:var(--panel);
 
 border:1px solid var(--line);
 
 border-radius:16px;
 
-padding:25px;
+padding:18px 22px;
 
-margin-top:25px;
+margin-top:20px;
 
 }
 
@@ -426,7 +425,9 @@ align-items:stretch;
 
 .paper-image{
 
-width:220px;
+width:170px;
+
+height:140px;
 
 flex-shrink:0;
 
