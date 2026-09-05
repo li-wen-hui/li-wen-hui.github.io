@@ -153,7 +153,31 @@ if pub_date:
                 .json()
                 .get("message", {})
             )
+# Crossref publication date
 
+date_parts = (
+    message
+    .get("published-print", {})
+    .get("date-parts", [[]])
+)
+
+
+if not date_parts[0]:
+
+    date_parts = (
+        message
+        .get("published-online", {})
+        .get("date-parts", [[]])
+    )
+
+
+if date_parts[0]:
+
+    if len(date_parts[0]) >= 2:
+
+        month = str(
+            date_parts[0][1]
+        ).zfill(2)
 
             journal = (
                 message
