@@ -687,11 +687,15 @@ flex:1;
 
 
 
-
 .paper p{
-color:#b6c9dc;
-}
 
+font-size:15px;
+
+line-height:1.6;
+
+margin:8px 0;
+
+}
 
 
 
@@ -826,10 +830,12 @@ cursor:not-allowed;
 
 
 
-
 .author-self{
-color:#83c5ff;
+
 font-weight:700;
+
+color:#83c5ff;
+
 }
 
 
