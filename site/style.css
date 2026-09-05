@@ -678,11 +678,16 @@ color:#b8cce0;
 
 .venue{
 
-color:#7f9bb8;
+color:#9ecbff;
 
-font-size:14px;
+font-weight:500;
 
-letter-spacing:.2px;
+}
+
+
+.date{
+
+color:#7f95aa;
 
 }
 
