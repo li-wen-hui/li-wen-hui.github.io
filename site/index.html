@@ -327,7 +327,19 @@ ${pub.title}
 
 <p>
 
-${pub.authors ? pub.authors.join(", ") : ""}
+${
+pub.authors
+?
+pub.authors.map(author =>
+author === "Wenhui Li"
+?
+`<span class="author-self">${author}</span>`
+:
+author
+).join(", ")
+:
+""
+}
 
 </p>
 
