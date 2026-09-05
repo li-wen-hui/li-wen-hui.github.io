@@ -64,32 +64,32 @@ for item in data.get("group", []):
     )
 
 
-year = ""
+    year = ""
 
-month = ""
+    month = ""
 
-pub_date = summary.get(
-    "publication-date"
-)
 
-if pub_date:
-
-    year = (
-        pub_date
-        .get("year", {})
-        .get("value", "")
+    pub_date = summary.get(
+        "publication-date"
     )
 
-    month = (
-        pub_date
-        .get("month", {})
-        .get("value", "")
-    )
 
+    if pub_date:
+
+        year = (
+            pub_date
+            .get("year", {})
+            .get("value", "")
+        )
+
+        month = (
+            pub_date
+            .get("month", {})
+            .get("value", "")
+        )
 
 
     doi = ""
-
 
     # DOI extraction
 
@@ -153,31 +153,33 @@ if pub_date:
                 .json()
                 .get("message", {})
             )
-# Crossref publication date
-
-date_parts = (
-    message
-    .get("published-print", {})
-    .get("date-parts", [[]])
-)
 
 
-if not date_parts[0]:
+            # Crossref publication date
 
-    date_parts = (
-        message
-        .get("published-online", {})
-        .get("date-parts", [[]])
-    )
+            date_parts = (
+                message
+                .get("published-print", {})
+                .get("date-parts", [[]])
+            )
 
 
-if date_parts[0]:
+            if not date_parts[0]:
 
-    if len(date_parts[0]) >= 2:
+                date_parts = (
+                    message
+                    .get("published-online", {})
+                    .get("date-parts", [[]])
+                )
 
-        month = str(
-            date_parts[0][1]
-        ).zfill(2)
+
+            if date_parts[0]:
+
+                if len(date_parts[0]) >= 2:
+
+                    month = str(
+                        date_parts[0][1]
+                    ).zfill(2)
 
             journal = (
                 message
