@@ -344,30 +344,31 @@ font-size:16px;
 }
 
 .profile-links a{
-  display:flex;
+  display:inline-flex;
   align-items:center;
   gap:10px;
-  color:#9db5ce;
+  width:fit-content;
+  padding:7px 12px;
+  border:1px solid rgba(120,170,220,.22);
+  border-radius:999px;
+  background:rgba(20,40,59,.35);
+  color:#a8bfd8;
   text-decoration:none;
-  font-size:15px;
+  font-size:14px;
   transition:.25s;
 }
 
 .profile-links a i{
-  width:18px;
-  text-align:center;
-  font-size:17px;
+  font-size:16px;
   color:#75c7ff;
-  flex-shrink:0;
 }
 
 .profile-links a:hover{
   color:#ffffff;
+  border-color:rgba(117,199,255,.55);
+  background:rgba(30,66,96,.45);
+  box-shadow:0 0 12px rgba(117,199,255,.18);
   transform:translateX(3px);
-}
-
-.profile-links a:hover i{
-  color:#a9dcff;
 }
 
 a{
