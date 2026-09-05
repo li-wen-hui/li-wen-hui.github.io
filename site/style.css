@@ -472,6 +472,13 @@ line-height:1.6;
 margin:8px 0;
 
 }
+.author-self{
+
+font-weight:700;
+
+color:#83c5ff;
+
+}
 @media(max-width:850px){
 
 .container{
@@ -480,13 +487,7 @@ grid-template-columns:1fr;
 
 }
 
-.author-self{
 
-font-weight:700;
-
-color:#83c5ff;
-
-}
 .paper{
 
 flex-direction:column;
