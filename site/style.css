@@ -581,24 +581,6 @@ blur(12px);
 
 
 
-.focus{
-
-
-border-left:
-
-4px solid var(--accent);
-
-
-box-shadow:
-
-0 0 30px rgba(80,160,255,.08);
-
-
-}
-
-
-
-
 .paper h3{
 
 
@@ -618,23 +600,44 @@ serif;
 
 .paper{
 
-
 display:flex;
-
 
 gap:30px;
 
-
 align-items:stretch;
-
 
 padding:18px 25px;
 
+box-shadow:
+
+0 0 30px rgba(80,160,255,.08);
 
 }
 
+.paper{
 
+position:relative;
 
+overflow:hidden;
+
+}
+.paper::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+bottom:0;
+
+width:4px;
+
+background:var(--accent);
+
+}
 
 .paper-image{
 
