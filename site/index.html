@@ -349,20 +349,23 @@ author
 
 ${pub.journal || ""}
 
-${
-pub.year
-?
-" (" + pub.year + ")"
-:
-""
-}
+ ·  
 
 ${
-pub.month
+pub.month 
 ?
-", " + pub.month
+new Date(
+`${pub.year}-${pub.month}-01`
+)
+.toLocaleString(
+'en-US',
+{
+month:'short',
+year:'numeric'
+}
+)
 :
-""
+pub.year || ""
 }
 
 </p>
