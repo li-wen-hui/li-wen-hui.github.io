@@ -335,40 +335,129 @@ font-size:16px;
 
 }
 
-
 .profile-links{
-  margin-top:25px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
+
+margin-top:25px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
 }
+
+
 
 .profile-links a{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  width:fit-content;
-  padding:7px 12px;
-  border:1px solid rgba(120,170,220,.22);
-  border-radius:999px;
-  background:rgba(20,40,59,.35);
-  color:#a8bfd8;
-  text-decoration:none;
-  font-size:14px;
-  transition:.25s;
+
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+width:max-content;
+
+padding:6px 14px;
+
+
+border-radius:20px;
+
+
+background:
+
+rgba(20,40,59,.35);
+
+
+border:
+
+1px solid rgba(120,170,220,.22);
+
+
+color:#a8bfd8;
+
+
+text-decoration:none;
+
+
+font-size:15px;
+
+
+transition:.25s;
+
+
 }
 
-.profile-links a i{
-  font-size:16px;
-  color:#75c7ff;
+
+
+.profile-links i{
+
+
+width:18px;
+
+text-align:center;
+
+font-size:17px;
+
+
 }
+
+
+
+.profile-links .ai-orcid{
+
+color:#a6ce39;
+
+}
+
+
+
+.profile-links .fa-github{
+
+color:#ffffff;
+
+}
+
+
+
+.profile-links .fa-graduation-cap{
+
+color:#75c7ff;
+
+}
+
+
 
 .profile-links a:hover{
-  color:#ffffff;
-  border-color:rgba(117,199,255,.55);
-  background:rgba(30,66,96,.45);
-  box-shadow:0 0 12px rgba(117,199,255,.18);
-  transform:translateX(3px);
+
+
+color:white;
+
+
+border-color:
+
+rgba(117,199,255,.6);
+
+
+background:
+
+rgba(30,66,96,.45);
+
+
+
+transform:
+
+translateX(4px);
+
+
+
+box-shadow:
+
+0 0 15px rgba(117,199,255,.2);
+
+
 }
 
 a{
