@@ -694,10 +694,20 @@ font-size:15px;
 line-height:1.6;
 
 margin:8px 0;
+    
+color:#b8cce0;
 
 }
 
+.paper p:nth-of-type(2){
 
+color:#7f9bb8;
+
+font-size:14px;
+
+letter-spacing:.2px;
+
+}
 
 .paper h3{
 
