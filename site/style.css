@@ -468,7 +468,21 @@ text-decoration:none;
 }
 
 
+.university-link{
 
+color:inherit;
+text-decoration:none;
+cursor:pointer;
+transition:.25s;
+
+}
+
+
+.university-link:hover{
+
+opacity:.75;
+
+}
 
 
 section{
