@@ -888,23 +888,13 @@ color:var(--muted);
 
 .copyright{
 
-display:inline-block;
-
 margin:0;
-
-padding:6px 14px;
-
-border:1px solid rgba(255,255,255,.28);
-
-border-radius:8px;
-
-color:rgba(255,255,255,.72);
 
 font-size:12px;
 
-letter-spacing:.4px;
+color:#71869d;
 
-background:rgba(255,255,255,.025);
+letter-spacing:.5px;
 
 }
 footer .profile-links{
