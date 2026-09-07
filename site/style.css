@@ -425,10 +425,8 @@ color:#75c7ff;
 
 }
 
-.profile-links .fa-researchgate{
-
-color:#00ccbb;
-
+.profile-links .ai-researchgate{
+    color:white;
 }
 
 .profile-links a:hover{
