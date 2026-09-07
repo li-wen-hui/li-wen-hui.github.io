@@ -403,7 +403,13 @@ font-size:17px;
 
 
 }
+.rg-icon{
 
+width:18px;
+height:18px;
+object-fit:contain;
+
+}
 .profile-links .fa-github{
 
 color:#ffffff;
