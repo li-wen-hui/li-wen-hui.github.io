@@ -404,18 +404,16 @@ font-size:17px;
 
 }
 
+.profile-links .fa-github{
+
+color:#ffffff;
+
+}
 
 
 .profile-links .fa-orcid{
 
     color:#a6ce39!important;
-
-}
-
-
-.profile-links .fa-github{
-
-color:#ffffff;
 
 }
 
@@ -427,7 +425,11 @@ color:#75c7ff;
 
 }
 
+.profile-links .fa-researchgate{
 
+color:#00ccbb;
+
+}
 
 .profile-links a:hover{
 
