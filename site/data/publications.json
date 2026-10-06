@@ -18,6 +18,24 @@
     "code": ""
   },
   {
+    "title": "Robust Reversible Image Watermarking Based on the Zeros Distribution of Orthogonal Moments",
+    "authors": [
+      "Xiuli Chai",
+      "Wenhui Li",
+      "Yajing Zhang",
+      "Huiqun Zou",
+      "Yang Lu",
+      "Zhihua Gan"
+    ],
+    "journal": "Signal Processing",
+    "year": "2026",
+    "month": "10",
+    "doi": "10.1016/j.sigpro.2026.110947",
+    "doi_url": "https://doi.org/10.1016/j.sigpro.2026.110947",
+    "url": "https://doi.org/10.1016/j.sigpro.2026.110947",
+    "code": ""
+  },
+  {
     "title": "A heterogeneous Hopfield neural network with discrete memristor: modeling, dynamics, and application in medical image encryption",
     "authors": [
       "Huiqun Zou",
