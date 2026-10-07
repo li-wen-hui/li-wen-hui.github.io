@@ -1,8 +1,9 @@
 {
     "A heterogeneous Hopfield neural network with discrete memristor: modeling, dynamics, and application in medical image encryption":
     "assets/papers/hopfield.png",
-    "Maximum-entropy polar harmonic transforms for information-density-driven image representation":
-    "assets/papers/MEPHTs.png",
     "Robust Reversible Image Watermarking Based on the Zeros Distribution of Orthogonal Moments":
-    "assets/papers/JFM.png"
+    "assets/papers/JFM.png",
+    "Maximum-entropy polar harmonic transforms for information-density-driven image representation":
+    "assets/papers/MEPHTs.png"
+
 }
