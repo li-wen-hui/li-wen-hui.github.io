@@ -318,7 +318,7 @@ for item in data.get("group", []):
             ),
 
 
-        "code": ""
+        "code": CODE_LINKS.get(doi.strip().lower(), "")
 
 
     })
