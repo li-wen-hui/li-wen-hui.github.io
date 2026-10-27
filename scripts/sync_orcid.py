@@ -39,7 +39,9 @@ data = response.json()
 
 
 papers = []
-
+CODE_LINKS = {
+    "10.1016/j.sigpro.2026.110947": "https://github.com/li-wen-hui/RRW-JFM"
+}
 
 # =========================
 # Parse ORCID works
